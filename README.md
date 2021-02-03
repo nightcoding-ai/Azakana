@@ -1,4 +1,4 @@
-# mylolprofil
+# Azakana
 Web app for consulting your own League of Legends profil. Based on Riot Games API, giving informations like MMR, Winrate, etc.
 
 # Co workers
