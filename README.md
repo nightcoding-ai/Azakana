@@ -1,5 +1,7 @@
 # Azakana
-Web app for consulting your own League of Legends profil. Based on Riot Games API, giving informations like MMR, Winrate, etc.
+Web app developped for League of Legends players, giving them the oppurtunity to create their own team, chat with eachothers.
+Furthermore, players can see their own stats. Azakana's coding is mainly Python, which uses Flask as a FrameWork
+
 
 # Co workers
 Christopher "Frost" Fauconnier
