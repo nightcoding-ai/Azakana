@@ -1,8 +1,5 @@
 # Azakana
 **Présentation du projet**
-~~*Web app developped for League of Legends players, giving them the oppurtunity to create their own team, chat with eachothers.
-Furthermore, players can see their own stats. Azakana's coding is mainly Python, which uses Flask as a FrameWork*~~
-
 Application Web pour les joueurs de 'League of Legends', permettant de consulter son profil et de créer sa propre équipe ainsi que 
 de communiquer avec ses membres. Le langage de programmation principal sera Python (version 3+), qui emploiera Flask en tant que Framework.
 
