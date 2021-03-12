@@ -1,23 +1,21 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-   <li>
-    <button>NA</button>
-   <button>EUW</button>
-   <button>EUNA</button>
-   <button>TU</button>
-   <button>JP</button>
-   <button>OC</button>
-   <button>ARG</button>
-   <button>ARG2</button>
+    <select name="pets">
+        <option value="NA">NA</option>
+        <option value="EUW">EUW</option>
+        <option value="EUNA">EUNA</option>
+        <option value="TU">TU</option>
+        <option value="JP">JP</option>
+        <option value="OC">OC</option>
+    </select>
 
-   </li>
     <label for="summoner"></label>
 
     <input type="search" id="site-search" name="q"
-       aria-label="Search through site content">
+           aria-label="Search through site content">
 
-<button>GO</button>
+    <button>Search</button>
 
 {% endblock %}
 
