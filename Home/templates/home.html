@@ -18,6 +18,7 @@
        aria-label="Search through site content">
 
 <button>GO</button>
-
+<span>Hello, {{ request.user }}</span>
+<span><a href="{% url 'logout' %}">LogOut</a></span>
 {% endblock %}
 
