@@ -7,12 +7,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 <link rel="stylesheet" href="register.css">
 
-
-
-
-
-
-
 <div class="card bg-light">
 <article class="card-body mx-auto" style="max-width: 400px;">
 	<h4 class="card-title mt-3 text-center">Create Account</h4>
@@ -46,6 +40,7 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
         </div> <!-- form-group// -->
+        {{ form.errors }}
         <p class="text-center">Have an account? <a href="{% url 'login' %}">Log In</a> </p>
     </form>
 </article>
