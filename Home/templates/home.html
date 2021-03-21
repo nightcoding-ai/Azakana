@@ -16,29 +16,47 @@
 
 </html>
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-black bg-white static-top height-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'Home' %}">
-          <img src="{% static 'img/Azakana_logo.png' %}" width="100px" height="85px" alt="logo">AZAKANA
+<nav class="navbar navbar-expand-lg navbar-black bg-white static-top height-lg" id="upper_menu">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'Home' %}">
+            <img src="{% static 'img/Azakana_logo.png' %}" width="100px" height="85px" alt="logo">AZAKANA
         </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'register' %}">S'inscrire
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Se connecter</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'register' %}">S'inscrire
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Se connecter</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 <body class="search">
+<nav class="navbar bg-white float-left">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="#"> Home </a>
+        </li>
+        <li class="nav-item">
+            <a href="#"> Services </a>
+        </li>
+        <li class="nav-item">
+            <a href="#"> Contact </a>
+        </li>
+        <li class="nav-item">
+            <a href="#"> Blogs </a>
+        </li>
+    </ul>
+</nav>
+<div class=”container”>
     <select name="servers">
         <option value="NA">NA</option>
         <option value="EUW">EUW</option>
@@ -54,5 +72,5 @@
            aria-label="Search through site content">
 
     <button>Rechercher</button>
+</div>
 </body>
-
