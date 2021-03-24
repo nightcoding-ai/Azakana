@@ -1,4 +1,4 @@
-nav{
+#upper_menu{
     border-bottom: solid 5px;
     border-bottom-color: darkorange;
 }
@@ -15,5 +15,4 @@ nav{
 }
 .search{
     text-align: center;
-    padding-top:175px;
 }
