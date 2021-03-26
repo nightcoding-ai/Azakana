@@ -1,8 +1,9 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background-color: #282c34;
+  background-color: grey;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -11,14 +12,42 @@ body {
 .Sidebar {
   height: 100%;
   width: 300px;
-  background-color: rgb(199, 143, 40);
+  background-color: orange;
 }
 
 .SidebarList {
-  height: auto%;
+  height: auto;
   padding: 0;
   width: 100%;
 }
 
 .SidebarList .row {
+  width: 100%;
+  height: 60px;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode";
+}
+
+.SidebarList .row:hover {
+  cursor: pointer;
+  background-color: rgb(255, 115, 0);
+}
+.SidebarList #active {
+  background-color: rgb(255, 115, 0);
+}
+
+.row #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+
+.row #title {
+  flex: 70%;
 }
