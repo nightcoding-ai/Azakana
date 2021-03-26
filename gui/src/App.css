@@ -1,0 +1,24 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: #282c34;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Sidebar {
+  height: 100%;
+  width: 300px;
+  background-color: rgb(199, 143, 40);
+}
+
+.SidebarList {
+  height: auto%;
+  padding: 0;
+  width: 100%;
+}
+
+.SidebarList .row {
+}
