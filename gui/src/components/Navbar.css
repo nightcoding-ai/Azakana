@@ -29,11 +29,6 @@
   align-items: center;
 }
 
-.fa-typo3 {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
-}
-
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(8, auto);
@@ -61,10 +56,6 @@
 .nav-links:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
-}
-
-.fa-bars {
-  color: #fff;
 }
 
 .nav-links-mobile {
@@ -128,11 +119,6 @@
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
   }
 
   .nav-links-mobile {
