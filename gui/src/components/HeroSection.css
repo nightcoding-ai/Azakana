@@ -61,6 +61,18 @@ video {
     font-size: 30px;
   }
 
+  .input{
+    width: 80%;
+  }
+
+  .research{
+    width: 80%;
+  }
+
+  .servers{
+
+  }
+
   .btn-mobile {
     display: block;
     text-decoration: none;
@@ -69,4 +81,32 @@ video {
   .btn {
     width: 100%;
   }
+}
+
+.Research{
+background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid ;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  }
+
+
+.input{
+  padding: 21px 40px;
+  margin-right: 10px;
+  outline: none;
+  border: 1px solid #fff;
+  font-size: 25px;
+  }
+
+.servers{
+background-color: orange;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  padding: 20px 40px;
+  border: 1px solid #fff;
+  outline: none;
+  font-size: 25px;
 }
