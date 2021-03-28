@@ -48,7 +48,7 @@ video {
 }
 
 .servers {
-  background-color: orange;
+  background-color: #d2691e;
   color: #fff;
   transition: all 0.3s ease-out;
   padding: 20px 40px;
