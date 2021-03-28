@@ -2,12 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .home,
-.services,
-.products,
+.statistiques,
+.team,
+.patch-notes,
+.champions,
+.e-sport,
 .sign-up {
   display: flex;
   height: 90vh;
@@ -16,8 +19,8 @@
   font-size: 3rem;
 }
 
-.services {
-  background-image: url('/images/img-2.jpg');
+.statistiques {
+  background-image: url("/images/arcade.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,17 +28,44 @@
   font-size: 100px;
 }
 
-.products {
-  background-image: url('/images/img-1.jpg');
+.team {
+  background-image: url("/images/jhin_camille.jpg");
   background-position: center;
-  background-size: fill;
+  background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
 }
 
 .sign-up {
-  background-image: url('/images/img-8.jpg');
+  background-image: url("/images/teemerde.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.patch-notes {
+  background-image: url("/images/yuumi.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.champions {
+  background-image: url("/images/yasuo.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.e-sport {
+  background-image: url("/images/img-home.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -6,7 +6,7 @@ import './HeroSection.css';
 function HeroSection() {
   return (
     <div className='hero-container'>
-      <video src='/videos/God King Garen Login Screen - League of Legends.mp4' autoPlay loop muted />
+      <video src='/videos/yone-fanart-login-screen-animation-loop-league-of-legends.mp4' autoPlay loop muted/>
       <div className="search">
       <select className="servers">
         <option value="NA">NA</option>

@@ -3,9 +3,12 @@ import Navbar from './components/Navbar';
 import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Services from './components/pages/Services';
-import Products from './components/pages/Products';
+import Statistiques from './components/pages/Statistiques';
 import SignUp from './components/pages/SignUp';
+import Patch_notes from './components/pages/Patch_notes';
+import Team from './components/pages/Team';
+import Champions from './components/pages/Champions';
+import E_sport from './components/pages/E_sport';
 
 function App() {
   return (
@@ -14,8 +17,11 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/services' component={Services} />
-          <Route path='/products' component={Products} />
+          <Route path='/statistiques' component={Statistiques} />
+          <Route path='/team' component={Team} />
+          <Route path='/patch-notes' component={Patch_notes} />
+          <Route path='/champions' component={Champions} />
+          <Route path='/e-sport' component={E_sport} />
           <Route path='/sign-up' component={SignUp} />
         </Switch>
       </Router>
