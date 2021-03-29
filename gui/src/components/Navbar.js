@@ -29,12 +29,15 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <img
+                    alt=""
+                    src="/images/icon.png"
+                    width="85"
+                    height="70"/>
+           <Link to='/' className='navbar-title' onClick={closeMobileMenu}>
             Azakana
-          </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
+
+            </Link>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -96,7 +99,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>Connexion</Button>}
+          {button && <Button buttonStyle='btn--connect'>Connexion</Button>}
         </div>
       </nav>
     </>

@@ -18,7 +18,7 @@
   max-width: 1500px;
 }
 
-.navbar-logo {
+.navbar-title {
   color: #fff;
   justify-self: start;
   margin-left: 20px;
@@ -64,6 +64,7 @@
 
 .menu-icon {
   display: none;
+
 }
 
 @media screen and (max-width: 960px) {
@@ -104,7 +105,7 @@
     border-radius: 0;
   }
 
-  .navbar-logo {
+  .navbar-title {
     position: absolute;
     top: 0;
     left: 0;
