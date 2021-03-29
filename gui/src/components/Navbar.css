@@ -67,6 +67,13 @@
 
 }
 
+.logo{
+    margin-right:25px;
+    width:85px;
+    height:70px;
+
+}
+
 @media screen and (max-width: 960px) {
   .NavbarItems {
     position: relative;
@@ -108,9 +115,12 @@
   .navbar-title {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0px;
     transform: translate(25%, 50%);
   }
+  .logo{
+    display:none;
+    }
 
   .menu-icon {
     display: block;

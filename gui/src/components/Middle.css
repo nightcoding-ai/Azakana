@@ -55,3 +55,12 @@ video {
   outline: none;
   font-size: 25px;
 }
+
+@media screen and (max-width: 960px) {
+    .Research, .input, .servers{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
