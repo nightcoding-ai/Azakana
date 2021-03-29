@@ -1,6 +1,12 @@
 import React from 'react';
 import '../../App.css';
+import Register from '../Register';
 
 export default function SignUp() {
-  return <h1 className='sign-up'>AJOUTER PAGE DE LOGIN</h1>;
+    <h1 className='sign-up'>AJOUTER PAGE DE LOGIN</h1>;
+  return (
+  <>
+    <Register />
+  </>
+  )
 }

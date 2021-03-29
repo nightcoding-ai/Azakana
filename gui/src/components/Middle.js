@@ -1,11 +1,11 @@
 import React from 'react';
 import '../App.css';
 import { Button } from './Button';
-import './HeroSection.css';
+import './Middle.css';
 
-function HeroSection() {
+function Middle() {
   return (
-    <div className='hero-container'>
+    <div className='mid-container'>
       <video src='/videos/yone-fanart-login-screen-animation-loop-league-of-legends.mp4' autoPlay loop muted/>
       <div className="search">
       <select className="servers">
@@ -33,4 +33,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Middle;

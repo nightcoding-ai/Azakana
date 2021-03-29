@@ -6,8 +6,7 @@ video {
   z-index: -1;
 }
 
-.hero-container {
-  /* background: url("/images/img-home.jpg") center center/cover no-repeat; */
+.mid-container {
   height: 100vh;
   width: 100%;
   display: flex;
