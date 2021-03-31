@@ -6,7 +6,7 @@ import './Middle.css';
 function Middle() {
   return (
       <div className='mid-container'>
-        <video src='/videos/yone-fanart-login-screen-animation-loop-league-of-legends.mp4' autoPlay loop muted/>
+        <video src='/videos/amogus.mp4' autoPlay loop />
         <div className="search">
         <select className="servers">
             <option value="NA">NA</option>
