@@ -1,13 +1,44 @@
-import React from 'react';
-import '../App.css';
-import { Button } from './Button';
-import './Register.css';
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import "./Register.css";
 
-function Register(){
-    return(
-        <>
-        </>
-    )
+export default function Register() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
+  return (
+    <div className="Login">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Pseudo</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Connexion
+        </Button>
+      </Form>
+    </div>
+  );
 }
-
-export default Register
