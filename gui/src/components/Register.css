@@ -2,4 +2,5 @@
   display: flex;
   font-size: 3rem;
   background-color: grey;
+  border-radius: 10px;
 }

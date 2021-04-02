@@ -6,11 +6,11 @@ import './Middle.css';
 function Middle() {
   return (
       <div className='mid-container'>
-        <video src='/videos/amogus.mp4' autoPlay loop />
+        <video src='/videos/yone-fanart-login-screen-animation-loop-league-of-legends.mp4' autoPlay loop muted/>
         <div className="search">
         <select className="servers">
-            <option value="NA">NA</option>
             <option value="EUW">EUW</option>
+            <option value="NA">NA</option>
             <option value="EUNA">EUNA</option>
             <option value="TU">TU</option>
             <option value="JP">JP</option>
