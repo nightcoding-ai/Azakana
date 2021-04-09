@@ -21,6 +21,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -34,7 +35,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'Home',
-    'gui',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'gui/build'),
+            os.path.join(BASE_DIR, 'frontend/build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,7 +123,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'gui/build/static'),
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+    os.path.join(BASE_DIR, 'frontend/build/images'),
 ]
 
 REST_FRAMEWORK = {

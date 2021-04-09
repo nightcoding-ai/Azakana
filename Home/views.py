@@ -3,6 +3,14 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserFrom
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .models import Home
+from .serializers import HomeSerializer
+from rest_framework import generics
+
+
+class HomeListCreate(generics.ListCreateAPIView):
+    queryset = Home.objects.all()
+    serializer_class = HomeSerializer
 
 
 def Home(request):
