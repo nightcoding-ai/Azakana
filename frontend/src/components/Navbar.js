@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-
+import logo from '../tempfiles/icon.png'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -29,7 +29,7 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-        <img alt="" src="/images/icon.png" className="logo"/>
+        <img alt="" src={logo} className="logo"/>
            <Link to='/' className='navbar-title' onClick={closeMobileMenu}>
             Azakana
            </Link>

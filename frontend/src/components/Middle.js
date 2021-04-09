@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import './Middle.css';
-import video from '../static/yone-fanart-login-screen-animation-loop-league-of-legends.mp4'
+import video from '../tempfiles/yone-fanart-login-screen-animation-loop-league-of-legends.mp4'
 
 function Middle() {
   return (
