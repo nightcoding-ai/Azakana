@@ -72,3 +72,19 @@
   color: #fff;
   font-size: 100px;
 }
+
+.btn-patch {
+  background-color: transparent;
+  color: #fff;
+  padding: 40px 60px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+}
+
+.btn--patch:hover {
+  transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
+}
