@@ -1,15 +1,19 @@
 import React from 'react';
 import '../../App.css';
-import Register from '../Register';
-import Footer from '../Footer';
+import Register from '../Register/Register';
+import Footer from '../Footer/Footer';
 
-export default function SignUp() {
-  return (
-    <>
-      <body className='sign-up'>
-        <Register />
-      </body>      
-      <Footer />
-    </>
-  )
+class SignUp extends React.Component {
+  render(){
+    return (
+      <>
+        <body className='sign-up'>
+          <Register />
+        </body>      
+        <Footer />
+      </>
+    )
+  }
 }
+
+export default SignUp;
