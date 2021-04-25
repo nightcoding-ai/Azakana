@@ -4,21 +4,26 @@ import './Middle.css';
 import video from '../../tempfiles/yone-fanart-login-screen-animation-loop-league-of-legends.mp4'
 import axios from 'axios';
 
+let data = Object;
+let url = String;
 
 class Middle extends React.Component{
 
   handleClick(){
     let serveur = document.getElementById('servers').value;
     let nom = document.getElementById('summoner').value;
-    alert(serveur + ' ' + nom);
-  }
-
-  componentDidMount() {
-    const API_DEV = 'RGAPI-f3152855-bbb0-436d-b01a-820dbc756e84';
-    axios.get(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Lamia%20Classy?api_key=`+API_DEV)
+    const API_DEV = 'RGAPI-0d079bac-c38c-4ae7-a9ec-0e630a4369b5';
+    axios.get(`https://`+serveur+`.api.riotgames.com/lol/summoner/v4/summoners/by-name/`+nom+`?api_key=`+API_DEV)
       .then(res => {
-        console.log(res)
+        //console.log(res);
+        data = res.data;
+        url = res.config.url;
+        console.log(data, url);
       })
+      .catch(error => {
+        console.log(error.response)
+      })
+    //alert(serveur + ' ' + nom);
   }
   
 
@@ -28,12 +33,14 @@ class Middle extends React.Component{
         <video src={video} autoPlay loop muted/>
         <div className="search">
         <select id='servers' className="servers">
-            <option value="EUW">EUW</option>
-            <option value="NA">NA</option>
-            <option value="EUNA">EUNA</option>
-            <option value="TU">TU</option>
-            <option value="JP">JP</option>
-            <option value="OC">OC</option>
+            <option value="euw1">EUW</option>
+            <option value="na1">NA</option>
+            <option value="euna1">EUNA</option>
+            <option value="tu1">TU</option>
+            <option value="jp1">JP</option>
+            <option value="oc1">OC</option>
+            <option value="kr">KR</option>
+            <option value="ru">RU</option>
         </select>
 
         <input
