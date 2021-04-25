@@ -7,14 +7,20 @@ import axios from 'axios';
 
 class Middle extends React.Component{
 
+  handleClick(){
+    let serveur = document.getElementById('servers').value;
+    let nom = document.getElementById('summoner').value;
+    alert(serveur + ' ' + nom);
+  }
+
   componentDidMount() {
     const API_DEV = 'RGAPI-f3152855-bbb0-436d-b01a-820dbc756e84';
     axios.get(`https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/Lamia%20Classy?api_key=`+API_DEV)
       .then(res => {
         console.log(res)
-      }
-    )
+      })
   }
+  
 
   render(){
     return (
@@ -38,7 +44,7 @@ class Middle extends React.Component{
             placeholder='Ton pseudo'
            />
 
-        <button onClick={() => console.log(document.getElementById("servers"))} className="Research">Rechercher</button>
+        <button onClick={this.handleClick} className="Research">Rechercher</button>
         </div>
     </div>
     );
