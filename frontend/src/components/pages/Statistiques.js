@@ -1,12 +1,16 @@
 import React from 'react';
 import '../../App.css';
-import Footer from '../Footer';
+import Footer from '../Footer/Footer';
 
-export default function Statistiques() {
-  return (
-    <>
-      <body className='statistiques'>Statistiques</body>
-      <Footer />
-    </>
-  )
+class Statistiques extends React.Component {
+  render(){
+    return (
+      <>
+        <body className='statistiques'>Statistiques</body>
+        <Footer />
+      </>
+    )
+  }
 }
+
+export default Statistiques;
