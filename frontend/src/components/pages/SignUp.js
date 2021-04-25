@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import Register from '../Register/Register';
-import Footer from '../Footer/Footer';
+
 
 class SignUp extends React.Component {
   render(){
@@ -9,8 +9,7 @@ class SignUp extends React.Component {
       <>
         <body className='sign-up'>
           <Register />
-        </body>      
-        <Footer />
+        </body>
       </>
     )
   }
