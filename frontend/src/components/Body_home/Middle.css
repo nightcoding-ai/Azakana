@@ -6,7 +6,7 @@ video {
   z-index: -1;
 }
 
-.mid-container {
+.mid-container{
   height: 100vh;
   width: 100%;
   display: flex;
@@ -15,7 +15,8 @@ video {
   align-items: center;
   object-fit: contain;
 }
-#profile {
+
+#profile{
   margin-top: 50px;
   align-items: center;
   justify-content: center;
@@ -28,13 +29,9 @@ video {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  margin-bottom:25px;
+
 }
-@media screen and (min-width: 200px) {
- .search{
-    margin-top:15%;
-  }
- }
+
 
 @media screen and (max-width: 768px) {
   .input {
@@ -50,10 +47,6 @@ video {
 
   .summoner_profile{
     width: 80%;
-  }
-
-  .servers{
-    margin-top:75%;
   }
 }
 
