@@ -28,7 +28,7 @@ video {
   margin-top: 50px;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .Research {
@@ -58,8 +58,8 @@ video {
 }
 
 .level_profile {
+  float: left;
   background-color: transparent;
-  width: 70px;
   color: #fff;
   padding: 20px;
   align-items: center;
