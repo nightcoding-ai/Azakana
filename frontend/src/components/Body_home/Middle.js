@@ -5,26 +5,39 @@ import video from '../../tempfiles/yone-fanart-login-screen-animation-loop-leagu
 import axios from 'axios';
 
 let data = Object;
-let url = String;
-
 class Middle extends React.Component{
 
   handleClick(){
-    let servers = document.getElementById('servers').value;
+    let server_selected = document.getElementById('servers').value;
     let summoner = document.getElementById('summoner').value;
     let section = document.getElementById('profile');
-    const API_DEV = 'RGAPI-0d079bac-c38c-4ae7-a9ec-0e630a4369b5';
-    axios.get(`https://`+servers+`.api.riotgames.com/lol/summoner/v4/summoners/by-name/`+summoner+`?api_key=`+API_DEV)
+    //let summonerId = String;
+    const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/'
+    //const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
+    const RiotFlex = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/z7X96WuLhmsv_DkGGSzs-AT8syZH8c4W-Vfx9JxbWrBBZ9E?api_key=RGAPI-0d079bac-c38c-4ae7-a9ec-0e630a4369b5"
+    const API_DEV = '?api_key=RGAPI-0d079bac-c38c-4ae7-a9ec-0e630a4369b5';
+
+    axios.get(`https://`+server_selected+RiotSummoner+summoner+API_DEV)
       .then(res => {
-        //console.log(res);
         data = res.data;
-        url = res.config.url;
-        console.log(data, url);
+        //console.log(data);
+        //summonerId = res.data.id;
         section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
         "</div><div id='summoner' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
+        //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
+        return axios.get(RiotFlex);
         })
+      .then(res => {
+        data = res.data;
+        for (let i = 0; i < data.length; i++) {
+          console.log(res.data[i])
+          document.getElementById('stats').innerHTML += "Rang: " + data[i].tier + " " + data[i].rank + "<br>";
+          document.getElementById('stats').innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%";
+        }
+      })
       .catch(error => {
-        console.log(error.response)
+        console.log(error.response);
+        section.innerHTML = "<div id='stats' class='error'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
       })
   }
   
