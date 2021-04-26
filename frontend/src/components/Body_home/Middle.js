@@ -22,7 +22,7 @@ class Middle extends React.Component{
         console.log(data, url);
         section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
         "</div><div id='summoner' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
-      })
+        })
       .catch(error => {
         console.log(error.response)
       })
@@ -33,7 +33,7 @@ class Middle extends React.Component{
     return (
       <div className='mid-container'>
         <video src={video} autoPlay loop muted/>
-        <div className="search">
+        <div className="search" id="search">
             <select id='servers' className="servers">
                 <option value="euw1">EUW</option>
                 <option value="na1">NA</option>

@@ -6,7 +6,7 @@ class E_sport extends React.Component {
   render(){
     return (
       <>
-        <body className='e-sport'>lien vers page esport LoL</body>
+        <div className='e-sport'>lien vers page esport LoL</div>
         <Footer />
       </>
     )

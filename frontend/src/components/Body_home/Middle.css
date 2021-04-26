@@ -37,11 +37,7 @@ video {
   font-size: 3rem;
   margin-bottom:25px;
 }
-@media screen and (max-width: 600px) {
- .search{
-      margin-top:55%;}
 
-}
 @media screen and (max-width: 768px) {
   .input {
     width: 80%;
@@ -57,12 +53,6 @@ video {
   .summoner_profile{
     width: 80%;
   }
-
-   .search{
-      margin-top:30%;
-   }
-
-
 }
 
 .Research {
@@ -108,12 +98,12 @@ video {
   transition: all 0.3s ease-out;
  }
 
-.stats_profile{
-    background-color:#FFF;
-    margin-top:25px;
-    width:100%;
-    height:50vh;
-
+.stats_profile {
+  background-color: transparent;
+  border: 1px solid;
+  margin-top: 25px;
+  width: 100%;
+  height: 50vh;
 }
 
 @media screen and (max-width: 960px) {
