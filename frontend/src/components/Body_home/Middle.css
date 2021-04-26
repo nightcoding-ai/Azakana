@@ -17,7 +17,7 @@ video {
 }
 
 .search{
-    margin-top:100px;
+    margin-top:50px;
 }
 
 #profile {
@@ -37,7 +37,11 @@ video {
   font-size: 3rem;
   margin-bottom:25px;
 }
+@media screen and (max-width: 600px) {
+ .search{
+      margin-top:55%;}
 
+}
 @media screen and (max-width: 768px) {
   .input {
     width: 80%;
@@ -53,6 +57,12 @@ video {
   .summoner_profile{
     width: 80%;
   }
+
+   .search{
+      margin-top:30%;
+   }
+
+
 }
 
 .Research {
@@ -116,8 +126,7 @@ video {
     margin-left: auto;
     margin-right: auto;
   }
-    .search{
-    margin-top:200px;}
+
   .summoner_profile{
     text-align:center;
   }
