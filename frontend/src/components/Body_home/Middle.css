@@ -58,7 +58,6 @@ video {
 }
 
 .level_profile {
-  float: left;
   background-color: transparent;
   color: #fff;
   padding: 20px;
@@ -122,5 +121,8 @@ video {
 
   .summoner_profile {
     text-align: center;
+  }
+  .level_profile{
+    width:70px;
   }
 }
