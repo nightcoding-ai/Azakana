@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1464b72e-0027-44d9-b2be-8f44f5e01b9d" name="Default Changelist" comment="" />
+    <list default="true" id="e6a2787c-7a66-4b62-9801-bfaf1ea534d3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1qLfRb9Qn4D4kXdEWs5s0bZu3vT" />
+  <component name="ProjectId" id="1rg4yuNDcTASADZfzoAFcFTE6pK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -18,16 +18,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gui/public/images" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1464b72e-0027-44d9-b2be-8f44f5e01b9d" name="Default Changelist" comment="" />
-      <created>1616863789472</created>
+      <changelist id="e6a2787c-7a66-4b62-9801-bfaf1ea534d3" name="Default Changelist" comment="" />
+      <created>1619384659101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1616863789472</updated>
+      <updated>1619384659101</updated>
     </task>
     <servers />
   </component>

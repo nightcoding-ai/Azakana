@@ -6,7 +6,7 @@ class Champions extends React.Component {
   render(){
     return (
       <>
-        <body className='champions'>infos sur les champions</body>
+        <div className='champions'>Infos sur les champions</div>
         <Footer />
       </>
     )

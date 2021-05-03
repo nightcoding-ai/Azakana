@@ -6,7 +6,7 @@ class Statistiques extends React.Component {
   render(){
     return (
       <>
-        <body className='statistiques'>Statistiques</body>
+        <div className='statistiques'>Statistiques</div>
         <Footer />
       </>
     )
