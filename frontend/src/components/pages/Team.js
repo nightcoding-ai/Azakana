@@ -6,7 +6,7 @@ class Team extends React.Component {
   render(){
     return (
       <>
-        <div className="team">Gestion d'équipe</div>
+        <body className='team'>gestion d'équipe</body>
         <Footer />
       </>
     )

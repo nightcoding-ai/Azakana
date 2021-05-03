@@ -13,22 +13,21 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   object-fit: contain;
 }
 
-#profile {
-  margin-top: 50px;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: #fff;
-}
+@media screen and (max-width: 768px) {
+  .input {
+    width: 80%;
+  }
 
-#stats {
-  margin-top: 50px;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
+  .research {
+    width: 80%;
+  }
+
+  .servers {
+  }
 }
 
 .Research {
@@ -57,72 +56,12 @@ video {
   font-size: 25px;
 }
 
-.level_profile {
-  background-color: transparent;
-  color: #fff;
-  padding: 20px;
-  align-items: center;
-  border: 1px solid;
-  transition: all 0.3s ease-out;
-  font-size: 25px;
-  margin-right: 660px;
-}
-
-.summoner_profile {
-  margin-top: 5%;
-  transition: all 0.3s ease-out;
-}
-
-.stats_profile {
-  background-color: transparent;
-  border: 1px solid;
-  margin-top: 5%;
-  width: 100%;
-  height: 50vh;
-}
-
-.error {
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 500px) {
-  .search {
-    margin: 200px 0px 0px 0px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .input {
-    width: 80%;
-  }
-
-  .research {
-    width: 80%;
-  }
-  #profile {
-    width: 80%;
-  }
-
-  .summoner_profile {
-    width: 80%;
-  }
-}
-
 @media screen and (max-width: 960px) {
   .Research,
   .input,
-  .servers,
-  .level_profile,
-  .summoner_profile {
+  .servers {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .summoner_profile {
-    text-align: center;
-  }
-  .level_profile{
-    width:70px;
   }
 }
