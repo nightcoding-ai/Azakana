@@ -14,9 +14,6 @@ class Middle extends React.Component{
     let summonerId = String;
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
     const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
-
-    //const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
-    //const RiotFlex = "https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/z7X96WuLhmsv_DkGGSzs-AT8syZH8c4W-Vfx9JxbWrBBZ9E?api_key=RGAPI-e3b488b6-d1a1-4862-a595-8b03fcc31f78"
     const API_DEV = 'api_key=RGAPI-e4baaad9-7f34-480a-a4ce-0a66668d8050';
     const RiotHistory = ".api.riotgames.com/lol/match/v5/matches/by-puuid/";
     const RiotHistoryDetails = ".api.riotgames.com/lol/match/v4/matches/";
@@ -25,6 +22,7 @@ class Middle extends React.Component{
     let history = [];
     let idGames = [];
     let infoGame = "";
+    let champName = "";
 
 
     axios.get(`https://`+server_selected+RiotSummoner+summoner+'?'+API_DEV)
@@ -32,6 +30,7 @@ class Middle extends React.Component{
         data = res.data;
         summonerId = res.data.id;
         summonerPuuid = res.data.puuid;
+        summoner = res.data.name;
         section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
@@ -78,16 +77,38 @@ class Middle extends React.Component{
           axios.get(`https://`+ server_selected + RiotHistoryDetails + idGames[l] + "?" + API_DEV)
             .then(res => {
               infoGame = res.data;
+              console.log(infoGame);
               const stats = document.getElementById('stats');
               
-              stats.innerHTML += infoGame.gameMode + ", durée de la partie en secondes:";
-              stats.innerHTML += infoGame.gameDuration + "<br>";
-              console.log(infoGame);
-              for(let i = 0; i < infoGame.participantIdentities.length; i ++){
-                if (infoGame.participantIdentities[i].summonerName === summoner){
-                    console.log(infoGame.participantIdentities[i].summonerName);
-                }
+              stats.innerHTML += infoGame.gameMode;
+              let min = Math.floor(infoGame.gameDuration / 60);
+              let sec = infoGame.gameDuration % 60;
+              if(sec < 10){
+                stats.innerHTML += " " + min + ":0" + sec;
+              }else{
+                  stats.innerHTML += " " + min + ":" + sec;
+                
               }
+      
+              console.log(infoGame.participantIdentities);
+              for(let i = 0; i < infoGame.participantIdentities.length; i ++){
+                if(infoGame.participantIdentities[i].player.summonerName === summoner){
+                  if(infoGame.participants[i].stats.win === true){
+                    stats.innerHTML += " Victoire" + "<br>";
+                  }else{
+                    stats.innerHTML += " Défaite" + "<br>";
+
+                  }
+                  stats.innerHTML += '<img src="http://ddragon.leagueoflegends.com/cdn/11.9.1/img/champion/Aatrox.png">';
+                  stats.innerHTML += infoGame.participants[i].stats.kills + "/"
+                                  + infoGame.participants[i].stats.deaths + "/"
+                                  + infoGame.participants[i].stats.assists + "<br>";
+
+                  
+                }
+                    
+                }
+              
             })
           }
         })
