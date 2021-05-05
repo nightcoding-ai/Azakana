@@ -3,7 +3,7 @@ import "./Register.css";
 
 class Register extends Component {
   state = {
-    credentials: {username: '', password: ''}
+    credentials: {username: '', password: '', mail: ''}
   }
 
   
@@ -45,7 +45,14 @@ class Register extends Component {
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="form-control" onClick={this.login}>Register</button>
+        <label>
+          Mail:
+          <input type="mail" name="mail" className="form-control"
+           value={this.state.credentials.mail}
+           onChange={this.inputChanged} />
+        </label>
+        <br/>
+        <button className="form-control" onClick={this.register}>Register</button>
     </div>
   );
   }

@@ -15,11 +15,13 @@ import { useState } from 'react';
 
 function App() {
 
-  const [token, setToken] = useState('');
+  const [setToken] = useState('');
 
   const userLogin = (tok) => {
+    console.log(tok);
     setToken(tok);
   }
+  
 
   return (
     <>
