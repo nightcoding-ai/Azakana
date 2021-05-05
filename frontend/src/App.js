@@ -33,7 +33,7 @@ function App() {
           <Route path='/champions' component={Champions} />
           <Route path='/e-sport' component={E_sport} />
           <Route path='/sign-in' component={SignIn} userLogin={userLogin}/>
-          <Route path='/sign-in' component={SignUp} />
+          <Route path='/sign-up' component={SignUp} />
         </Switch>
         <Footer />
       </Router>

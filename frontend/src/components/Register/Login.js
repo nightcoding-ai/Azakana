@@ -47,6 +47,11 @@ class Login extends Component {
         <br/>
         <button className="form-control" onClick={this.login}>Login</button>
         
+        <Link
+                to='/sign-up'
+          >
+                <button className="form-control" >Register</button>
+              </Link>
         
     </div>
   );
