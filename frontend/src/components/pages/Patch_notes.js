@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import Footer from '../Footer/Footer';
 
 class Patch_notes extends React.Component {
   render(){
@@ -11,7 +10,6 @@ class Patch_notes extends React.Component {
             Accéder aux notes de patch
           </button>
         </div>
-        <Footer />
       </>
     )
   }

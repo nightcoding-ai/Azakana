@@ -1,44 +1,53 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import React, { Component} from "react";
 import "./Register.css";
 
-export default function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
+class Register extends Component {
+  state = {
+    credentials: {username: '', password: ''}
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  
+  inputChanged = event => {
+    const cred = this.state.credentials;
+    cred[event.target.name] = event.target.value;
+    this.setState({credentials: cred});
   }
 
+  register = event => {
+    fetch('http://127.0.0.1:8000/api/users/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(this.state.credentials)
+    })
+    .then( data => data.json())
+    .then(
+      data => {
+        console.log(data.token);
+      }
+    )
+    .catch( error => console.error(error))
+  }
+
+  render(){
   return (
     <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
-          <Form.Label>Pseudo</Form.Label>
-          <Form.Control
-            autoFocus
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Connexion
-        </Button>
-      </Form>
+      <label>
+          Username:
+          <input type="text" name="username" className="form-control"
+           value={this.state.credentials.username}
+           onChange={this.inputChanged} />
+        </label>
+        <br/>
+        <label>
+          Password:
+          <input type="password" name="password" className="form-control"
+           value={this.state.credentials.password}
+           onChange={this.inputChanged} />
+        </label>
+        <br/>
+        <button className="form-control" onClick={this.login}>Register</button>
     </div>
   );
+  }
 }
+export default Register;
