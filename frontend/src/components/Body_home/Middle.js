@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from 'react';
+import React from 'react';
 import '../../App.css';
 import './Middle.css';
 import video from '../../tempfiles/yone-fanart-login-screen-animation-loop-league-of-legends.mp4'
@@ -26,9 +26,6 @@ class Middle extends React.Component{
     let idGames = [];
     let infoGame = "";
 
- 
-    
-
 
     axios.get(`https://`+server_selected+RiotSummoner+summoner+'?'+API_DEV)
       .then(res => {
@@ -40,16 +37,13 @@ class Middle extends React.Component{
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
         return axios.get(`https://`+server_selected+RiotFlex+summonerId+'?'+API_DEV);
         })
-      .then(res => {
+      .then(res => {    //requête pour récupérer taux de victoire des parties classées 
         data = res.data;
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
-
-          //console.log(res.data[i])
           
 
           if(data[i].queueType === "RANKED_SOLO_5x5"){
-
             stats.innerHTML += "Rang Solo/Duo: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
             stats.innerHTML += "Victoires:"+ String(data[i].wins) + " /Défaites: " + String(data[i].losses)+"<br>";
@@ -57,80 +51,47 @@ class Middle extends React.Component{
           
 
           if (data[i].queueType === "RANKED_FLEX_SR"){
-
             stats.innerHTML += "Rang Flex: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
             stats.innerHTML += "Victoires:"+ String(data[i].wins) + " /Défaites: " + String(data[i].losses)+"<br>";
           }
-   
 
           stats.innerHTML += "<br>";
         }
         return axios.get(`https://`+server_selected+RiotMastery+summonerId+ "?" + API_DEV);
-      })
-      .then( res => {
+        })
+      .then( res => {   //requête points de maitrise champions
         const stats = document.getElementById('stats');
-        console.log(res.data);
         stats.innerHTML += "<H3>Top 3 des champions les plus joués :</H3>"
         for (let i = 0; i < 3; i++) {
           stats.innerHTML += "id du champion : " + String(res.data[i].championId) +", points de maitrise : "+ String(res.data[i].championPoints) +"<br>";
 
         }
         return axios.get(`https://europe`+RiotHistory+summonerPuuid+'/ids?start=0&count=10&'+API_DEV)
-      })
-    
-      .then(res => {
+        })
+      .then(res => {    //requête pour remplir tableau history avec les id de parties
         history = res.data;
-        
-        
-          for(let k = 0; k < history.length; k ++){
-            
-            idGames.push(history[k].slice(5));
-          
-          }
-          for(let l = 0; l < idGames.length; l ++){
-            axios.get(`https://`+ server_selected + RiotHistoryDetails + idGames[l] + "?" + API_DEV)
-              .then(res => {
-                infoGame = res.data;
-                const stats = document.getElementById('stats');
-                
-                stats.innerHTML += infoGame.gameMode + "<br>";
-                stats.innerHTML += infoGame.gameDuration + "<br>";
-                console.log(infoGame);
-                for(let i = 0; i < infoGame.participantIdentities.length; i ++){
-                  if (infoGame.participantIdentities[i].summonerName = summoner){
-                      console.log(infoGame.participantIdentities[i].summonerName);
-                      
-                  }
+        for(let k = 0; k < history.length; k ++){
+          idGames.push(history[k].slice(5));
+        }
+        for(let l = 0; l < idGames.length; l ++){
+          axios.get(`https://`+ server_selected + RiotHistoryDetails + idGames[l] + "?" + API_DEV)
+            .then(res => {
+              infoGame = res.data;
+              const stats = document.getElementById('stats');
+              
+              stats.innerHTML += infoGame.gameMode + ", durée de la partie en secondes:";
+              stats.innerHTML += infoGame.gameDuration + "<br>";
+              console.log(infoGame);
+              for(let i = 0; i < infoGame.participantIdentities.length; i ++){
+                if (infoGame.participantIdentities[i].summonerName === summoner){
+                    console.log(infoGame.participantIdentities[i].summonerName);
                 }
-              })
+              }
+            })
           }
-      })          
-              
-            
-            
-            
+        })
 
-            
-          
-      
-  
-          
-            
-              
-            
-              
-           
-      
-         
-            
-
-          
-      
-
-          
-          
-        
       .catch(error => {
         console.log(error.response);
         section.innerHTML = "<div id='stats' class='error'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
