@@ -15,12 +15,13 @@ class Middle extends React.Component{
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
     const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
     const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
-    const API_DEV = '?api_key=RGAPI-dec6207c-df81-4d1c-90ca-aa82e8509177';
+    const API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8';
 
-    axios.get(`https://`+server_selected+RiotSummoner+summoner+API_DEV)
+    axios.get(`http://127.0.0.1:8000/api/riot/`+server_selected+'/'+summoner)
       .then(res => {
         data = res.data;
         summonerId = res.data.id;
+        console.log(data, summonerId);
         section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
