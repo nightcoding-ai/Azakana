@@ -14,7 +14,7 @@ class Middle extends React.Component{
     let summonerId = String;
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
     const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
-    const API_DEV = 'api_key=RGAPI-4a7ed036-afb8-448f-a920-0e5314f186df';
+    const API_DEV = 'api_key=RGAPI-ea671648-8772-4441-bac2-1a013b40a0ff';
     const RiotHistory = ".api.riotgames.com/lol/match/v5/matches/by-puuid/";
     const RiotHistoryDetails = ".api.riotgames.com/lol/match/v4/matches/";
     const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
@@ -40,15 +40,11 @@ class Middle extends React.Component{
         data = res.data;
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
-
-
           if(data[i].queueType === "RANKED_SOLO_5x5"){
             stats.innerHTML += "Rang Solo/Duo: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
             stats.innerHTML += "Victoires:"+ String(data[i].wins) + " /Défaites: " + String(data[i].losses)+"<br>";
           }
-
-
           if (data[i].queueType === "RANKED_FLEX_SR"){
             stats.innerHTML += "Rang Flex: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
@@ -78,7 +74,6 @@ class Middle extends React.Component{
           axios.get(`https://`+ server_selected + RiotHistoryDetails + idGames[l] + "?" + API_DEV)
             .then(res => {
               infoGame = res.data;
-              console.log(infoGame);
               const stats = document.getElementById('stats');
               stats.innerHTML += "<br>";
               stats.innerHTML += infoGame.gameMode;
@@ -86,12 +81,11 @@ class Middle extends React.Component{
               let sec = infoGame.gameDuration % 60;
               if(sec < 10){
                 stats.innerHTML += " " + min + ":0" + sec;
-              }else{
+              }
+              else{
                   stats.innerHTML += " " + min + ":" + sec;
 
               }
-
-              console.log(infoGame.participantIdentities);
               for(let i = 0; i < infoGame.participantIdentities.length; i ++){
                 if(infoGame.participantIdentities[i].player.summonerName === summoner){
                   if(infoGame.participants[i].stats.win === true){
@@ -106,16 +100,13 @@ class Middle extends React.Component{
                                   + infoGame.participants[i].stats.assists + "<br>";
 
                 }
-
-                }
+              }
 
             })
           }
         })
-
       .catch(error => {
-        console.log(error.response);
-        section.innerHTML = "<div id='stats' class='error'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
+        section.innerHTML = "<div id='stats' class='stats'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
       })
     }
 
