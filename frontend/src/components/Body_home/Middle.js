@@ -14,7 +14,7 @@ class Middle extends React.Component{
     let summonerId = String;
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
     const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
-    const API_DEV = 'api_key=RGAPI-e4baaad9-7f34-480a-a4ce-0a66668d8050';
+    const API_DEV = 'api_key=RGAPI-4a7ed036-afb8-448f-a920-0e5314f186df';
     const RiotHistory = ".api.riotgames.com/lol/match/v5/matches/by-puuid/";
     const RiotHistoryDetails = ".api.riotgames.com/lol/match/v4/matches/";
     const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
@@ -31,23 +31,23 @@ class Middle extends React.Component{
         summonerId = res.data.id;
         summonerPuuid = res.data.puuid;
         summoner = res.data.name;
-        section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
-        "</div><div id='summoner_name' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
+        section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
+        "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
         return axios.get(`https://`+server_selected+RiotFlex+summonerId+'?'+API_DEV);
         })
-      .then(res => {    //requête pour récupérer taux de victoire des parties classées 
+      .then(res => {    //requête pour récupérer taux de victoire des parties classées
         data = res.data;
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
-          
+
 
           if(data[i].queueType === "RANKED_SOLO_5x5"){
             stats.innerHTML += "Rang Solo/Duo: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
             stats.innerHTML += "Victoires:"+ String(data[i].wins) + " /Défaites: " + String(data[i].losses)+"<br>";
           }
-          
+
 
           if (data[i].queueType === "RANKED_FLEX_SR"){
             stats.innerHTML += "Rang Flex: " + data[i].tier + " " + data[i].rank + "<br>";
@@ -63,9 +63,10 @@ class Middle extends React.Component{
         const stats = document.getElementById('stats');
         stats.innerHTML += "<H3>Top 3 des champions les plus joués :</H3>"
         for (let i = 0; i < 3; i++) {
-          stats.innerHTML += "id du champion : " + String(res.data[i].championId) +", points de maitrise : "+ String(res.data[i].championPoints) +"<br>";
+          stats.innerHTML += "ID du champion : " + String(res.data[i].championId) +", points de maitrise : "+ String(res.data[i].championPoints) +"<br>";
 
         }
+        stats.innerHTML += "<br>";
         return axios.get(`https://europe`+RiotHistory+summonerPuuid+'/ids?start=0&count=10&'+API_DEV)
         })
       .then(res => {    //requête pour remplir tableau history avec les id de parties
@@ -79,7 +80,7 @@ class Middle extends React.Component{
               infoGame = res.data;
               console.log(infoGame);
               const stats = document.getElementById('stats');
-              
+              stats.innerHTML += "<br>";
               stats.innerHTML += infoGame.gameMode;
               let min = Math.floor(infoGame.gameDuration / 60);
               let sec = infoGame.gameDuration % 60;
@@ -87,9 +88,9 @@ class Middle extends React.Component{
                 stats.innerHTML += " " + min + ":0" + sec;
               }else{
                   stats.innerHTML += " " + min + ":" + sec;
-                
+
               }
-      
+
               console.log(infoGame.participantIdentities);
               for(let i = 0; i < infoGame.participantIdentities.length; i ++){
                 if(infoGame.participantIdentities[i].player.summonerName === summoner){
@@ -104,11 +105,10 @@ class Middle extends React.Component{
                                   + infoGame.participants[i].stats.deaths + "/"
                                   + infoGame.participants[i].stats.assists + "<br>";
 
-                  
                 }
-                    
+
                 }
-              
+
             })
           }
         })
@@ -118,11 +118,11 @@ class Middle extends React.Component{
         section.innerHTML = "<div id='stats' class='error'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
       })
     }
-  
+
 
   render(){
     return (
-      <div className='mid-container'>
+      <div id='mid' className='mid-container'>
         <video src={video} autoPlay loop muted/>
         <div className="search" id="search">
             <select id='servers' className="servers">
@@ -144,9 +144,9 @@ class Middle extends React.Component{
                 placeholder='Ton pseudo'
                />
 
-            <button onClick={this.handleClick} className="Research">Rechercher</button>
+            <button onClick={this.handleClick}  className="research">Rechercher</button>
         </div>
-        <div id='profile'></div>
+        <div id='profile' className='profile'></div>
       </div>
     );
   }
