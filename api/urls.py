@@ -12,5 +12,7 @@ router.register('users', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('riot/<str:server>/<str:pseudo>', views.profile)
+    path('profile/<str:server>/<str:pseudo>', views.profile),
+    path('ranks/<str:server>/<str:summonerId>', views.ranks),
+    path('masteries/<str:server>/<str:summonerId>', views.masteries),
 ]
