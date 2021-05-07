@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import Footer from '../Footer/Footer';
 import Register from '../Register/Register';
 
 class SignUp extends React.Component {
@@ -9,6 +10,7 @@ class SignUp extends React.Component {
         <div className='sign-up'>
           <Register />
         </div>
+        <Footer/>
       </>
     )
   }

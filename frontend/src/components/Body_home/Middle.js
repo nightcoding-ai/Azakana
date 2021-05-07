@@ -23,8 +23,8 @@ class Middle extends React.Component{
         data = res.data;
         summonerId = res.data.id;
         console.log(data, summonerId);
-        section.innerHTML = "<div id='Level' class='level_profile'>"+String(data.summonerLevel)+
-        "</div><div id='summoner_name' class='summoner_profile'>"+String(data.name)+"</div><div id='stats' class='stats_profile'></div>";
+        section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
+        "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
         return axios.get(api_Django+'ranks/'+server_selected+'/'+summonerId);
         })
@@ -85,9 +85,9 @@ class Middle extends React.Component{
                 placeholder='Ton pseudo'
                />
 
-            <button onClick={this.handleClick} className="Research">Rechercher</button>
+            <button onClick={this.handleClick} className="research">Rechercher</button>
         </div>
-        <div id='profile'></div>
+        <div id='profile' className='profile'></div>
       </div>
     );
   }
