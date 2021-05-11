@@ -8,8 +8,9 @@ import requests
 import json
 
 
+
 def profile(request, server, pseudo):
-    API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8'
+    API_DEV = '?api_key=RGAPI-62e44b4c-a47a-4284-aa83-47b688335f10'
     url = 'https://' + server + \
         '.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + pseudo + API_DEV
     r = requests.get(url, headers={'Content-Type': 'application/json'})
@@ -18,7 +19,7 @@ def profile(request, server, pseudo):
 
 
 def ranks(request, server, summonerId):
-    API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8'
+    API_DEV = '?api_key=RGAPI-62e44b4c-a47a-4284-aa83-47b688335f10'
     url = 'https://' + server + \
         '.api.riotgames.com/lol/league/v4/entries/by-summoner/' + summonerId + API_DEV
     r = requests.get(url, headers={'Content-Type': 'application/json'})
@@ -27,7 +28,7 @@ def ranks(request, server, summonerId):
 
 
 def masteries(request, server, summonerId):
-    API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8'
+    API_DEV = '?api_key=RGAPI-62e44b4c-a47a-4284-aa83-47b688335f10'
     url = 'https://' + server + \
         '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + \
         summonerId + API_DEV

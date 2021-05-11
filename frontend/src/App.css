@@ -98,3 +98,10 @@
   color: #242424;
   transition: 250ms;
 }
+
+.form-control {
+  display: flex;
+  font-size: 3rem;
+  background-color: grey;
+  border-radius: 10px;
+}
