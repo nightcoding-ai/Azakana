@@ -83,6 +83,15 @@
   font-size: 100px;
 }
 
+.flux {
+  background-image: url("/static/images/img-home.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
 .btn-patch {
   background-color: transparent;
   color: #fff;

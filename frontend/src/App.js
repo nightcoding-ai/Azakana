@@ -10,6 +10,7 @@ import Patch_notes from './components/pages/Patch_notes';
 import Team from './components/pages/Team';
 import Champions from './components/pages/Champions';
 import E_sport from './components/pages/E_sport';
+import Flux from './components/pages/Flux';
 
 class App extends React.Component{
   state = {
@@ -35,6 +36,7 @@ class App extends React.Component{
           <Route path='/e-sport' component={E_sport} />
           <Route path='/sign-in' component={SignIn } />
           <Route path='/sign-up' component={SignUp} />
+          <Route path='/flux' component={Flux} />
         </Switch>
        </Router>
        

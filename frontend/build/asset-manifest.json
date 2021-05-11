@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.4f9679f3.chunk.css",
-    "main.js": "/static/js/main.c52950f1.chunk.js",
-    "main.js.map": "/static/js/main.c52950f1.chunk.js.map",
+    "main.css": "/static/css/main.7f76c856.chunk.css",
+    "main.js": "/static/js/main.19996fb0.chunk.js",
+    "main.js.map": "/static/js/main.19996fb0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d7b60d89.js",
     "runtime-main.js.map": "/static/js/runtime-main.d7b60d89.js.map",
-    "static/js/2.5629b240.chunk.js": "/static/js/2.5629b240.chunk.js",
-    "static/js/2.5629b240.chunk.js.map": "/static/js/2.5629b240.chunk.js.map",
+    "static/js/2.3f2a45ff.chunk.js": "/static/js/2.3f2a45ff.chunk.js",
+    "static/js/2.3f2a45ff.chunk.js.map": "/static/js/2.3f2a45ff.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.30b0b5a6c040c60d7ece0f17d28e047c.js": "/precache-manifest.30b0b5a6c040c60d7ece0f17d28e047c.js",
+    "precache-manifest.8b6a1b944f13c2298338b0b73eca58f5.js": "/precache-manifest.8b6a1b944f13c2298338b0b73eca58f5.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.4f9679f3.chunk.css.map": "/static/css/main.4f9679f3.chunk.css.map",
-    "static/js/2.5629b240.chunk.js.LICENSE.txt": "/static/js/2.5629b240.chunk.js.LICENSE.txt",
-    "static/media/icon.png": "/static/media/icon.3fe78924.png",
-    "static/media/yone-fanart-login-screen-animation-loop-league-of-legends.mp4": "/static/media/yone-fanart-login-screen-animation-loop-league-of-legends.32b64a8d.mp4"
+    "static/css/main.7f76c856.chunk.css.map": "/static/css/main.7f76c856.chunk.css.map",
+    "static/js/2.3f2a45ff.chunk.js.LICENSE.txt": "/static/js/2.3f2a45ff.chunk.js.LICENSE.txt",
+    "static/media/God King Garen Login Screen - League of Legends.mp4": "/static/media/God King Garen Login Screen - League of Legends.d40d52bc.mp4",
+    "static/media/icon.png": "/static/media/icon.3fe78924.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d7b60d89.js",
-    "static/js/2.5629b240.chunk.js",
-    "static/css/main.4f9679f3.chunk.css",
-    "static/js/main.c52950f1.chunk.js"
+    "static/js/2.3f2a45ff.chunk.js",
+    "static/css/main.7f76c856.chunk.css",
+    "static/js/main.19996fb0.chunk.js"
   ]
 }
