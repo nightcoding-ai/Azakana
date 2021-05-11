@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import './Middle.css';
-import video from '../../tempfiles/yone-fanart-login-screen-animation-loop-league-of-legends.mp4'
+import video from '../../tempfiles/God King Garen Login Screen - League of Legends.mp4'
 import axios from 'axios';
 
 let data = Object;
@@ -13,7 +13,7 @@ class Middle extends React.Component{
     let section = document.getElementById('profile');
     let summonerId = String;
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
-    const api_Django = 'http://127.0.0.1:8000/api/'
+    const api_Django = 'http://51.210.4.115:8000/api/'
     //const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
     //const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
     //const API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8';
