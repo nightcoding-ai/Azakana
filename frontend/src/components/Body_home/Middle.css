@@ -53,11 +53,12 @@ video {
   font-size: 25px;
 }
 
-.research:hover{
+.research:hover {
   transition: all 0.3s ease-out;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   transition: 250ms;
 }
+
 .input {
   padding: 21px 40px;
   outline: none;
@@ -130,6 +131,7 @@ video {
   .summoner_name {
     text-align: center;
   }
+
   .level {
     width: 80px;
     text-align:center;

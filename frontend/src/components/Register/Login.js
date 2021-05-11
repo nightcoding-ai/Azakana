@@ -33,22 +33,22 @@ class Login extends Component {
     <div className="login">
       <label className="label-form">
           Username
-          <input type="text" name="username" className="input_form"
+          <input type="text" name="username" className="input-form"
            value={this.state.credentials.username}
            onChange={this.inputChanged} />
         </label>
         <br/>
         <label className="label-form">
           Password
-          <input type="password" name="password" className="input_form"
+          <input type="password" name="password" className="input-form"
            value={this.state.credentials.password}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="button_form" onClick={this.login}>Login</button>
+        <button className="button-form" onClick={this.login}>Login</button>
 
         <Link to='/sign-up'>
-                <button className="button_register_login"  to='/sign-up'>Register</button>
+                <button className="button-register"  to='/sign-up'>Register</button>
         </Link>
         
     </div>
