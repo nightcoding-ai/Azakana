@@ -8,7 +8,7 @@ video {
 
 .mid-container {
   width: 100%;
-  display:inline;
+  display: inline;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@ video {
 }
 
 .profile {
-  padding:auto;
+  padding: auto;
   margin-top: 50px;
   margin-bottom: 100px;
   align-items: center;
@@ -36,7 +36,7 @@ video {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  padding:20px 0px 20px 20px;
+  padding: 20px 20px 20px 20px;
   font-size: 2rem;
   background-color: transparent;
   border: 1px solid;
@@ -73,7 +73,7 @@ video {
   display:inline-block;
   background-color: transparent;
   color: #fff;
-  margin-left:25%;
+  margin-left: 25%;
   padding: 20px;
   align-items: center;
   border: 1px solid;
@@ -83,7 +83,7 @@ video {
 
 .summoner_name {
   display:inline-block;
-  margin-left:50px;
+  margin-left: 50px;
   margin-top: 5%;
   transition: all 0.3s ease-out;
 }
@@ -94,13 +94,10 @@ video {
 
 @media screen and (max-width: 768px) {
   .search{
-    margin-top:30%;
+    margin-top: 30%;
   }
   .input {
     width: 80%;
-  }
-
-  .research {
   }
 
   .summoner_profile {
@@ -128,6 +125,7 @@ video {
     text-align: center;
   }
   .level {
-    width: 70px;
+    width: 80px;
+    text-align:center;
   }
 }

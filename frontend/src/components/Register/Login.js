@@ -45,7 +45,7 @@ class Login extends Component {
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="button_login" onClick={this.login}>Login</button>
+        <button className="button_form" onClick={this.login}>Login</button>
 
         <Link to='/sign-up'>
                 <button className="button_register_login"  to='/sign-up'>Register</button>

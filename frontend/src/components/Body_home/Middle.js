@@ -14,7 +14,7 @@ class Middle extends React.Component{
     let summonerId = String;
     const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
     const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
-    const API_DEV = 'api_key=RGAPI-ea671648-8772-4441-bac2-1a013b40a0ff';
+    const API_DEV = 'api_key=RGAPI-40181da0-06a9-4e9e-a3fb-eab55b4ec0e0';
     const RiotHistory = ".api.riotgames.com/lol/match/v5/matches/by-puuid/";
     const RiotHistoryDetails = ".api.riotgames.com/lol/match/v4/matches/";
     const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';

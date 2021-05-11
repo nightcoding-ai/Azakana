@@ -52,7 +52,7 @@ class Register extends Component {
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="button_register" onClick={this.register}>Register</button>
+        <button className="button_form" onClick={this.register}>Register</button>
     </div>
   );
   }

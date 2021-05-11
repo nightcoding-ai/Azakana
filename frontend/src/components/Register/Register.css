@@ -18,10 +18,10 @@
 }
 
 .label-form {
-  font-size:60%;
+  font-size:55%;
 }
 
-.button_login{
+.button_form {
   background-color: transparent;
   color: #fff;
   padding: 21px 40px;
@@ -30,7 +30,7 @@
   font-size: 25px;
 }
 
-.button_register_login{
+.button_register_login {
   background-color: transparent;
   color: #fff;
   padding: 21px 40px;
@@ -39,20 +39,17 @@
   font-size: 25px;
   margin-left:200px;
 }
-
-.button_register{
-  background-color: transparent;
-  color: #fff;
-  padding: 21px 40px;
-  border: 1px solid;
-  transition: all 0.3s ease-out;
-  font-size: 25px;
-
+.button_form:hover, .button_register_login:hover{
+transition: all 0.3s ease-out;
+  background: #fff;
+  color: #242424;
+  transition: 250ms;
 }
 
-.input_form{
+.input_form {
     width:500px;
     height:50px;
+    font-size:40px;
 }
 
 
