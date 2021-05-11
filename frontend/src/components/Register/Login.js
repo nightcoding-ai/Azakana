@@ -1,20 +1,14 @@
 import React, { Component} from "react";
 import "./Register.css";
+import { Link } from 'react-router-dom';
 
-class Register extends Component {
+class Login extends Component {
   state = {
-    credentials: {username: '', password: '', mail: ''}
+    credentials: {username: '', password: ''}
   }
 
-  
-  inputChanged = event => {
-    const cred = this.state.credentials;
-    cred[event.target.name] = event.target.value;
-    this.setState({credentials: cred});
-  }
-
-  register = event => {
-    fetch('http://127.0.0.1:8000/api/users/', {
+  login = event => {
+    fetch('http://127.0.0.1:8000/auth/', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(this.state.credentials)
@@ -22,15 +16,21 @@ class Register extends Component {
     .then( data => data.json())
     .then(
       data => {
-        console.log(data.token);
+        this.props.userLogin(data.token);
+        console.log(data);
       }
     )
     .catch( error => console.error(error))
   }
+  inputChanged = event => {
+    const cred = this.state.credentials;
+    cred[event.target.name] = event.target.value;
+    this.setState({credentials: cred});
+  }
 
   render(){
   return (
-    <div className="register">
+    <div className="login">
       <label className="label-form">
           Username
           <input type="text" name="username" className="input_form"
@@ -45,16 +45,14 @@ class Register extends Component {
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <label className="label-form">
-          Mail
-          <input type="mail" name="mail" className="input_form"
-           value={this.state.credentials.mail}
-           onChange={this.inputChanged} />
-        </label>
-        <br/>
-        <button className="button_register" onClick={this.register}>Register</button>
+        <button className="button_login" onClick={this.login}>Login</button>
+
+        <Link to='/sign-up'>
+                <button className="button_register_login"  to='/sign-up'>Register</button>
+        </Link>
+        
     </div>
   );
   }
 }
-export default Register;
+export default Login;

@@ -1,6 +1,59 @@
-.form-control {
-  display: flex;
-  font-size: 3rem;
-  background-color: grey;
-  border-radius: 10px;
+.login {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:600px;
+  margin-bottom:200px;
+  align-items:center;
+  text-align: center;
 }
+
+.register {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:600px;
+  margin-bottom:50px;
+  text-align: center;
+}
+
+.label-form {
+  font-size:60%;
+}
+
+.button_login{
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+}
+
+.button_register_login{
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left:200px;
+}
+
+.button_register{
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+
+}
+
+.input_form{
+    width:500px;
+    height:50px;
+}
+
+
+

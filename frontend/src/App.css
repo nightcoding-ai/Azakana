@@ -11,7 +11,8 @@
 .patch-notes,
 .champions,
 .e-sport,
-.sign-up {
+.sign-up,
+.sign-in {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -38,6 +39,15 @@
 }
 
 .sign-up {
+  background-image: url("/images/teemerde.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.sign-in {
   background-image: url("/images/teemerde.jpg");
   background-position: center;
   background-size: cover;
