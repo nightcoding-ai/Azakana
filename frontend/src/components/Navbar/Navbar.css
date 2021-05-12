@@ -153,3 +153,18 @@
     transition: 250ms;
   }
 }
+
+.nav-form {
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin-top: 100px;
+  height: 25%;
+}
+
+.nav-label {
+  color: #fff;
+  text-decoration: none;
+  height: 25%;
+}

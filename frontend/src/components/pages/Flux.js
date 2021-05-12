@@ -4,12 +4,12 @@ import Footer from '../Footer/Footer';
 class Flux extends React.Component {
     state = {
         streamer: [
-          { url: 'https://player.twitch.tv/?channel=solary&parent=127.0.0.1',nom: "solary" },
-          { url: 'https://player.twitch.tv/?channel=ogaminglol&parent=127.0.0.1',nom: "ogaminglol" },
-          { url: 'https://player.twitch.tv/?channel=gobgg&parent=127.0.0.1',nom: "gobgg" },
-          { url: 'https://player.twitch.tv/?channel=sixentv&parent=127.0.0.1',nom: "sixentv" },
+          { url: 'https://player.twitch.tv/?channel=solary&parent=51.210.4.115',nom: "solary" },
+          { url: 'https://player.twitch.tv/?channel=ogaminglol&parent=51.210.4.115',nom: "ogaminglol" },
+          { url: 'https://player.twitch.tv/?channel=gobgg&parent=51.210.4.115',nom: "gobgg" },
+          { url: 'https://player.twitch.tv/?channel=sixentv&parent=51.210.4.115',nom: "sixentv" },
         ],
-        encours: "https://player.twitch.tv/?channel=solary&parent=127.0.0.1"
+        encours: "https://player.twitch.tv/?channel=solary&parent=51.210.4.115"
       };
     onAdd = streamer => {
         
