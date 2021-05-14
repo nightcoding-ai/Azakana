@@ -7,7 +7,9 @@ class E_Sport extends React.Component{
   render(){
     return (
       <>
-        <Stream />
+        <div className='e-sport'>
+            <Stream />
+        </div>
         <Footer />
       </>
     );

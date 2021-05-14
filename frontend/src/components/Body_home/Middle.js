@@ -56,7 +56,7 @@ class Middle extends React.Component{
       })
       .catch(error => {
         console.log(error.response);
-        section.innerHTML = "<div id='stats' class='error'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
+        section.innerHTML = "<div id='stats' class='stats'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
       })
   }
   

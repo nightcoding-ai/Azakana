@@ -75,7 +75,7 @@
 }
 
 .e-sport {
-  background-image: url("/static/images/img-home.jpg");
+  background-image: url("/static/images/kayle.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -83,14 +83,6 @@
   font-size: 100px;
 }
 
-.flux {
-  background-image: url("/static/images/img-home.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
 
 .btn-patch {
   background-color: transparent;
@@ -103,10 +95,10 @@
 
 .btn--patch:hover {
   transition: all 0.3s ease-out;
-  background: #fff;
-  color: #242424;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   transition: 250ms;
 }
+
 
 .form-control {
   display: flex;

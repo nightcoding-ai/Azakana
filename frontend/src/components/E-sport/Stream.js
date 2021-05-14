@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
-import Footer from '../Footer/Footer';
+import './Stream.css';
+
 class Stream extends React.Component {
 //51.210.4.115 Lien vers le site en ligne
     state = {

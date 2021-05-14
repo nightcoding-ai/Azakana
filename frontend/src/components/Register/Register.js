@@ -30,29 +30,29 @@ class Register extends Component {
 
   render(){
   return (
-    <div className="Login">
-      <label>
-          Username:
-          <input type="text" name="username" className="form-control"
+    <div className="register">
+      <label className="label-form">
+          Username
+          <input type="text" name="username" className="input-form"
            value={this.state.credentials.username}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <label>
-          Password:
-          <input type="password" name="password" className="form-control"
+        <label className="label-form">
+          Password
+          <input type="password" name="password" className="input-form"
            value={this.state.credentials.password}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <label>
-          Mail:
-          <input type="mail" name="mail" className="form-control"
+        <label className="label-form">
+          Mail
+          <input type="mail" name="mail" className="input-form"
            value={this.state.credentials.mail}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="form-control" onClick={this.register}>Register</button>
+        <button className="button-form" onClick={this.register}>Register</button>
     </div>
   );
   }

@@ -29,29 +29,27 @@ class Login extends Component {
 
   render(){
   return (
-    <div className="Login">
-      <label>
-          Username:
-          <input type="text" name="username" className="form-control"
+    <div className="login">
+      <label className="label-form">
+          Username
+          <input type="text" name="username" className="input-form"
            value={this.state.credentials.username}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <label>
-          Password:
-          <input type="password" name="password" className="form-control"
+        <label className="label-form">
+          Password
+          <input type="password" name="password" className="input-form"
            value={this.state.credentials.password}
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="form-control" onClick={this.login}>Login</button>
-        
-        <Link
-                to='/sign-up'
-          >
-                <button className="form-control" >Register</button>
-              </Link>
-        
+        <button className="button-form" onClick={this.login}>Login</button>
+
+        <Link to='/sign-up'>
+                <button className="button-register"  to='/sign-up'>Register</button>
+        </Link>
+
     </div>
   );
   }

@@ -1,6 +1,57 @@
-.form-control {
-  display: flex;
-  font-size: 3rem;
-  background-color: grey;
-  border-radius: 10px;
+.login {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:600px;
+  margin-bottom:200px;
+  align-items:center;
+  text-align: center;
 }
+
+.register {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:600px;
+  margin-bottom:50px;
+  text-align: center;
+}
+
+.label-form {
+  font-size:60%;
+}
+
+.button-form {
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+}
+
+.button-register{
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left:180px;
+}
+
+.button-form:hover,
+.button-register:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  transition: 250ms;
+}
+
+.input-form {
+    width:500px;
+    height:50px;
+    font-size:40px;
+}
+
+
+
