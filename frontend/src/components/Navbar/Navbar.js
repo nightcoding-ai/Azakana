@@ -86,15 +86,6 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to='/flux'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Flux
-              </Link>
-            </li>
-            <li>
-              <Link
                 to='/sign-in'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}

@@ -16,7 +16,6 @@ class Login extends Component {
     .then( data => data.json())
     .then(
       data => {
-        this.props.userLogin(data.token);
         console.log(data);
       }
     )

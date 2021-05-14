@@ -1,0 +1,7 @@
+.flux{
+  width: 100%;
+  display:inline;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
