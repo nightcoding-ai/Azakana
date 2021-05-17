@@ -1,50 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
+import { ButtonD } from '../Button/ButtonD';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../tempfiles/icon.png';
 import Cookies from 'js-cookie';
 
-function Navbar() {
-  let dt = Cookies.get('Token');
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
+class Navbar extends React.Component{
+  state = {
+    token: Cookies.get('Token'),
+    click: false,
+    button: true,
+    element: "",
+    str:"",
+  }
+  handleClick = () => this.setState({click: !this.state.click});
+  closeMobileMenu = () => this.setState({click: false});
+  
+  showButton = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
+      this.setState({button: false})
     } else {
-      setButton(true);
+      this.setState({button: true})
     }
   };
-
-  useEffect(() => {
-    showButton();
+  
+  useEffect = (() => {
+    this.showButton();
   }, []);
 
-  window.addEventListener('resize', showButton);
+  deleteToken = () =>{
+    Cookies.remove('Token');
+    document.location.href="/";
+  }
 
-  return (
+  render_token = () => {
+    if (typeof(this.state.token) != 'undefined') {
+      this.setState({str:<ButtonD onClick={this.deleteToken} buttonStyle='btn--connect'>Déconnexion</ButtonD>})
+    }else{
+      this.setState({str:<Button buttonStyle='btn--connect'>Connexion</Button>})
+    }
+  };
+  
+  render(){
+    window.addEventListener('resize', this.showButton);
+    return (
     <>
-      <nav className='navbar'>
+      <nav className='navbar' onLoad={this.render_token}>
         <div className='navbar-container'>
         <img alt="" src={logo} className="logo"/>
-           <Link to='/' className='navbar-title' onClick={closeMobileMenu}>
+           <Link to='/' className='navbar-title' onClick={this.closeMobileMenu}>
             Azakana
            </Link>
-           <div className='menu-icon' onClick={handleClick}>
-           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+           <div className='menu-icon' onClick={this.handleClick}>
+           <i className={this.state.click ? 'fas fa-times' : 'fas fa-bars'} />
            </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <ul className={this.state.click  ? 'nav-menu active' : 'nav-menu'}>
 
             <li className='nav-item'>
               <Link
                 to='/statistiques'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={this.closeMobileMenu}
               >
                 Statistiques
               </Link>
@@ -53,7 +70,7 @@ function Navbar() {
               <Link
                 to='/team'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={this.closeMobileMenu}
               >
                 Equipe
               </Link>
@@ -62,7 +79,7 @@ function Navbar() {
               <Link
                 to='/patch-notes'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={this.closeMobileMenu}
               >
                 Notes de patch
               </Link>
@@ -71,7 +88,7 @@ function Navbar() {
               <Link
                 to='/champions'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={this.closeMobileMenu}
               >
                 Champions
               </Link>
@@ -80,27 +97,19 @@ function Navbar() {
               <Link
                 to='/e-sport'
                 className='nav-links'
-                onClick={closeMobileMenu}
+                onClick={this.closeMobileMenu}
               >
                 E-sport
               </Link>
             </li>
-            <li>
-              <Link
-                to='/sign-in'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Connexion
-              </Link>
-            </li>
-            
           </ul>
-          {button && <Button buttonStyle='btn--connect'>Connexion</Button>}
+          {this.state.str}
+          
         </div>
       </nav>
     </>
   );
+}
 }
 
 export default Navbar;
