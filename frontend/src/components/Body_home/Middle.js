@@ -12,16 +12,18 @@ class Middle extends React.Component{
     let summoner = document.getElementById('summoner').value;
     let section = document.getElementById('profile');
     let summonerId = String;
-    const RiotSummoner = '.api.riotgames.com/lol/summoner/v4/summoners/by-name/';
+    let summonerPuuid = String;
+    let history = [];
+    let idGames = []; 
+    let infoGame = "";
     const api_Django = 'http://127.0.0.1:8000/api/'//51.210.4.115
-    //const RiotFlex = ".api.riotgames.com/lol/league/v4/entries/by-summoner/";
-    //const RiotMastery = '.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/';
-    //const API_DEV = '?api_key=RGAPI-cf20f189-4379-4fb0-81a9-f09eb8337db8';
+
 
     axios.get(api_Django+'profile/'+server_selected+'/'+summoner)
       .then(res => {
         data = res.data;
-        summonerId = res.data.id;
+        summonerId = data.id;
+        summonerPuuid = data.puuid;
         console.log(data, summonerId);
         section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
@@ -30,6 +32,7 @@ class Middle extends React.Component{
         })
       .then(res => {
         data = res.data;
+        console.log(data);
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
           if(data[i].queueType === "RANKED_SOLO_5x5"){
@@ -48,17 +51,57 @@ class Middle extends React.Component{
       })
       .then( res => {
         const stats = document.getElementById('stats');
-        console.log(res.data);
+        //console.log(res.data);
         stats.innerHTML += "<H3>Top 3 des champions les plus joués :</H3>"
         for (let i = 0; i < 3; i++) {
           stats.innerHTML += "id du champion : " + String(res.data[i].championId) +", points de maitrise : "+ String(res.data[i].championPoints) +"<br>";
+        }
+        stats.innerHTML += "<br>";
+        return axios.get(api_Django+'history/europe/'+summonerPuuid);
+      })
+      .then(res => {    //requête pour remplir tableau history avec les id de parties
+        history = res.data;
+        console.log(history);
+        for(let k = 0; k < history.length; k ++){
+          idGames.push(history[k].slice(5));
+        }
+        for(let l = 0; l < idGames.length; l ++){
+          axios.get(api_Django +'details/'+ server_selected +'/'+ idGames[l])
+            .then(res => {
+              infoGame = res.data;
+              console.log(infoGame);
+              const stats = document.getElementById('stats');
+              stats.innerHTML += "<br>";
+              stats.innerHTML += infoGame.gameMode;
+              let min = Math.floor(infoGame.gameDuration / 60);
+              let sec = infoGame.gameDuration % 60;
+              if(sec < 10){
+                stats.innerHTML += " " + min + ":0" + sec;
+              }
+              else{
+                  stats.innerHTML += " " + min + ":" + sec;
+              }
+              for(let i = 0; i < infoGame.participantIdentities.length; i ++){
+                if(infoGame.participantIdentities[i].player.summonerName === summoner){
+                  if(infoGame.participants[i].stats.win === true){
+                    stats.innerHTML += " Victoire" + "<br>";
+                  }else{
+                    stats.innerHTML += " Défaite" + "<br>";
+                  }
+                  stats.innerHTML += infoGame.participants[i].stats.kills + "/"
+                                  + infoGame.participants[i].stats.deaths + "/"
+                                  + infoGame.participants[i].stats.assists + "<br>";
+                }
+              }
+            })
         }
       })
       .catch(error => {
         console.log(error.response);
         section.innerHTML = "<div id='stats' class='stats'>Cet utilisateur n'existe pas.<br>Veuillez vérifier le pseudo et/ou le serveur.</div>";
       })
-  }
+    }
+  
   
 
   render(){
@@ -92,5 +135,4 @@ class Middle extends React.Component{
     );
   }
 }
-
 export default Middle;

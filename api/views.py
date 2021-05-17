@@ -7,7 +7,7 @@ from django.http import JsonResponse, HttpResponse
 import requests
 import json
 
-API_DEV = 'api_key=RGAPI-753e6dce-f5cd-4e2b-a3fc-031265da33c2'
+API_DEV = 'api_key=RGAPI-139c78e5-f887-4e21-968f-696417ab327f'
 
 def profile(request, server, pseudo):
     url = 'https://' + server + \
