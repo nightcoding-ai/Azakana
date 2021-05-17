@@ -3,6 +3,7 @@ import '../../App.css';
 import './Middle.css';
 import video from '../../tempfiles/God King Garen Login Screen - League of Legends.mp4'
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 let data = Object;
 class Middle extends React.Component{
@@ -32,10 +33,11 @@ class Middle extends React.Component{
         })
       .then(res => {
         data = res.data;
-        console.log(data);
+        //console.log(data);
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
           if(data[i].queueType === "RANKED_SOLO_5x5"){
+            stats.innerHTML +=
             stats.innerHTML += "Rang Solo/Duo: " + data[i].tier + " " + data[i].rank + "<br>";
             stats.innerHTML += "Pourcentage de victoire: "+ Math.round(data[i].wins/(data[i].wins+data[i].losses)*100)+"%<br>";
             stats.innerHTML += "Victoires:"+ String(data[i].wins) + " /Défaites: " + String(data[i].losses)+"<br>";
@@ -61,7 +63,7 @@ class Middle extends React.Component{
       })
       .then(res => {    //requête pour remplir tableau history avec les id de parties
         history = res.data;
-        console.log(history);
+        //console.log(history);
         for(let k = 0; k < history.length; k ++){
           idGames.push(history[k].slice(5));
         }
@@ -69,7 +71,7 @@ class Middle extends React.Component{
           axios.get(api_Django +'details/'+ server_selected +'/'+ idGames[l])
             .then(res => {
               infoGame = res.data;
-              console.log(infoGame);
+              //console.log(infoGame);
               const stats = document.getElementById('stats');
               stats.innerHTML += "<br>";
               stats.innerHTML += infoGame.gameMode;

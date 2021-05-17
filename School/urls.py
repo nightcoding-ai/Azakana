@@ -16,5 +16,5 @@ urlpatterns = [
     re_path(r'^e-sport', TemplateView.as_view(template_name='index.html')),
     re_path(r'^sign-in', TemplateView.as_view(template_name='index.html')),
     re_path(r'^sign-up', TemplateView.as_view(template_name='index.html')),
-    re_path(r'^flux', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^connected', TemplateView.as_view(template_name='index.html')),
 ]

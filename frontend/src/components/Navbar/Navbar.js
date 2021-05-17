@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../../tempfiles/icon.png'
-
+import logo from '../../tempfiles/icon.png';
+import Cookies from 'js-cookie';
 
 function Navbar() {
+  let dt = Cookies.get('Token');
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 

@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import "./Register.css";
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 class Login extends Component {
   state = {
@@ -16,7 +17,15 @@ class Login extends Component {
     .then( data => data.json())
     .then(
       data => {
-        console.log(data);
+        console.log(data.token);
+        let tok ="token";
+        if(data[tok]){
+            Cookies.set("Token",data.token, { expires: 1 });
+            document.location.href="/connected";
+        }
+        else{
+           console.log('error');
+        }
       }
     )
     .catch( error => console.error(error))
@@ -28,30 +37,30 @@ class Login extends Component {
   }
 
   render(){
-  return (
-    <div className="login">
-      <label className="label-form">
-          Username
-          <input type="text" name="username" className="input-form"
-           value={this.state.credentials.username}
-           onChange={this.inputChanged} />
-        </label>
-        <br/>
-        <label className="label-form">
-          Password
-          <input type="password" name="password" className="input-form"
-           value={this.state.credentials.password}
-           onChange={this.inputChanged} />
-        </label>
-        <br/>
-        <button className="button-form" onClick={this.login}>Login</button>
-
-        <Link to='/sign-up'>
-                <button className="button-register"  to='/sign-up'>Register</button>
-        </Link>
-
-    </div>
-  );
+    return (
+      <div>
+           <div id="login" className="login">
+              <label className="label-form">
+                  Username
+                  <input type="text" name="username" className="input-form"
+                   value={this.state.credentials.username}
+                   onChange={this.inputChanged} />
+                </label>
+                <br/>
+                <label className="label-form">
+                  Password
+                  <input type="password" name="password" className="input-form"
+                   value={this.state.credentials.password}
+                   onChange={this.inputChanged} />
+                </label>
+                <br/>
+                <button id='button-form' className="button-form" onClick={this.login} >Login</button>
+                <Link to='/sign-up'>
+                    <button className="button-register"  to='/sign-up'>Register</button>
+                </Link>
+          </div>
+      </div>
+    );
   }
 }
 export default Login;

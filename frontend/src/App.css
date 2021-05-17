@@ -12,7 +12,8 @@
 .champions,
 .e-sport,
 .sign-up,
-.sign-in {
+.sign-in,
+.connected {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -48,6 +49,15 @@
 }
 
 .sign-in {
+  background-image: url("/static/images/teemerde.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.connected {
   background-image: url("/static/images/teemerde.jpg");
   background-position: center;
   background-size: cover;
