@@ -25,7 +25,7 @@ class Login extends Component {
         }
         else{
            let error = document.getElementById('error');
-           error.innerHTML="<p style='color:white'>Pseudo/mot de passe incorrect</p>";
+           error.innerHTML="<p id='incorrect'>Pseudo/mot de passe incorrect</p>";
         }
       }
     )
@@ -54,7 +54,7 @@ class Login extends Component {
                    value={this.state.credentials.password}
                    onChange={this.inputChanged} />
                 </label>
-                <label id='error' className='label-form'></label>
+                <label id='error'></label>
                 <button id='button-form' className="button-form" onClick={this.login} >Connexion</button>
                 <Link to='/sign-up'>
                     <button className="button-register"  to='/sign-up'>Inscription</button>
