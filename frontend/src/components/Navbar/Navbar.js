@@ -9,6 +9,7 @@ import Cookies from 'js-cookie';
 class Navbar extends React.Component{
   state = {
     token: Cookies.get('Token'),
+    pseudo: Cookies.get('Pseudo'),
     click: false,
     button: true,
     element: "",
@@ -39,6 +40,7 @@ class Navbar extends React.Component{
       this.setState({str:<ButtonD onClick={this.deleteToken} buttonStyle='btn--connect'>Déconnexion</ButtonD>})
     }else{
       this.setState({str:<Button buttonStyle='btn--connect'>Connexion</Button>})
+      this.setState({pseudo: ""});
     }
   };
   
@@ -103,7 +105,11 @@ class Navbar extends React.Component{
               </Link>
             </li>
           </ul>
+          <p id="pseudo">
+          {this.state.pseudo}
+          </p>
           {this.state.str}
+          
           
         </div>
       </nav>

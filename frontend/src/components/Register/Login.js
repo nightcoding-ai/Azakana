@@ -5,7 +5,8 @@ import Cookies from 'js-cookie';
 
 class Login extends Component {
   state = {
-    credentials: {username: '', password: ''}
+    credentials: {username: '', password: ''},
+    token: Cookies.get('Token'),
   }
 
   login = event => {
@@ -21,6 +22,7 @@ class Login extends Component {
         let tok ="token";
         if(data[tok]){
             Cookies.set("Token",data.token, { expires: 1 });
+            Cookies.set("Pseudo",this.state.credentials.username, { expires: 1 });
             document.location.href="/connected";
         }
         else{
@@ -35,6 +37,12 @@ class Login extends Component {
     const cred = this.state.credentials;
     cred[event.target.name] = event.target.value;
     this.setState({credentials: cred});
+  }
+  connect = () => {
+    console.log("cc");
+    if (typeof(this.state.token) != 'undefined') {
+      document.location.href="/";
+    }
   }
 
   render(){
