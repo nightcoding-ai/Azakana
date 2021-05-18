@@ -1,7 +1,8 @@
-from rest_framework import viewsets
+from rest_framework import serializers, viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, User
+from django.core import serializers
 from .serializers import UserSerializer
 from django.http import JsonResponse, HttpResponse
 import requests
@@ -34,11 +35,6 @@ def masteries(request, server, summonerId):
     data = r.json()
     return JsonResponse(data, safe=False)
 
-def champions(request):
-    url = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json'
-    r = requests.get(url, headers={'Content-Type': 'application/json'})
-    data = r.json()
-    return JsonResponse(data, safe=False)
 
 def history(request, fullserver, summonerPuuid):
     url = 'https://' + fullserver + \
@@ -58,7 +54,31 @@ def historyDetails(request, server, idGame):
 
 
 def equipe(request):
-    data = list(Team.objects.values())
+    data_temp = list(Team.objects.values('name', 'players'))
+    data = []
+    noms = []
+    for i in data_temp:
+        dict = {}
+        # print(data)
+        if not data:
+            dict['name'] = i['name']
+            noms.append(i['name'])
+            dict['players'] = list()
+            dict['players'].append(i['players'])
+            data.append(dict)
+        else:
+            for j in data:
+                #print(i, j)
+                if (i['name'] == j['name'] and i['players'] not in j['players']):
+                    j['players'].append(i['players'])
+
+                elif i['name'] not in noms:
+                    dict['name'] = i['name']
+                    noms.append(i['name'])
+                    dict['players'] = list()
+                    dict['players'].append(i['players'])
+                    data.append(dict)
+
     return JsonResponse(data, safe=False)
 
 
