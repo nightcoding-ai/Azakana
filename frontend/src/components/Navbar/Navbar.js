@@ -48,7 +48,7 @@ class Navbar extends React.Component{
     <>
       <nav className='navbar' onLoad={this.render_token}>
         <div className='navbar-container'>
-        <img alt="" src={logo} className="logo"/>
+        <img alt="" src={logo} className="logo" />
            <Link to='/' className='navbar-title' onClick={this.closeMobileMenu}>
             Azakana
            </Link>
@@ -103,7 +103,9 @@ class Navbar extends React.Component{
               </Link>
             </li>
           </ul>
+          
           {this.state.str}
+          
           
         </div>
       </nav>

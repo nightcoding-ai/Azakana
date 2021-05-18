@@ -3,6 +3,11 @@ import '../../App.css';
 import Footer from '../Footer/Footer';
 
 class Statistiques extends React.Component {
+  state = {
+    token: Cookies.get('Token'),
+    pseudo: Cookies.get('Pseudo'),
+  }
+
   render(){
     return (
       <>

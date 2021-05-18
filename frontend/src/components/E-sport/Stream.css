@@ -1,3 +1,32 @@
 .flux{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+ul{
   display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stream-link{
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+iframe{
+    margin-top:50px;
+}
+
+.stream-link:hover{
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  transition: 250ms;
 }

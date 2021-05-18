@@ -114,9 +114,9 @@
 
   .navbar-title {
     position: absolute;
-    top: 0;
-    left: 0px;
-    transform: translate(25%, 50%);
+    font-size:90%;
+    left: 0;
+    margin-right:300px;
   }
   .logo{
     display:none;
@@ -168,3 +168,4 @@
   text-decoration: none;
   height: 25%;
 }
+

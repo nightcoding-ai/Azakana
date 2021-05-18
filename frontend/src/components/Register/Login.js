@@ -5,7 +5,8 @@ import Cookies from 'js-cookie';
 
 class Login extends Component {
   state = {
-    credentials: {username: '', password: ''}
+    credentials: {username: '', password: ''},
+    token: Cookies.get('Token'),
   }
 
   login = event => {
@@ -21,10 +22,12 @@ class Login extends Component {
         let tok ="token";
         if(data[tok]){
             Cookies.set("Token",data.token, { expires: 1 });
+            Cookies.set("Pseudo",this.state.credentials.username, { expires: 1 });
             document.location.href="/connected";
         }
         else{
-           console.log('error');
+           let error = document.getElementById('error');
+           error.innerHTML="<p id='incorrect'>Pseudo/mot de passe incorrect</p>";
         }
       }
     )
@@ -35,28 +38,34 @@ class Login extends Component {
     cred[event.target.name] = event.target.value;
     this.setState({credentials: cred});
   }
+  connect = () => {
+    console.log("cc");
+    if (typeof(this.state.token) != 'undefined') {
+      document.location.href="/";
+    }
+  }
 
   render(){
     return (
       <div>
            <div id="login" className="login">
               <label className="label-form">
-                  Username
+                  Pseudo
                   <input type="text" name="username" className="input-form"
                    value={this.state.credentials.username}
                    onChange={this.inputChanged} />
                 </label>
                 <br/>
                 <label className="label-form">
-                  Password
-                  <input type="password" name="password" className="input-form"
+                  Mot de passe
+                  <input type="password" name="password" className="input-form" id="mdp"
                    value={this.state.credentials.password}
                    onChange={this.inputChanged} />
                 </label>
-                <br/>
-                <button id='button-form' className="button-form" onClick={this.login} >Login</button>
+                <label id='error'></label>
+                <button id='button-form' className="button-form" onClick={this.login} >Connexion</button>
                 <Link to='/sign-up'>
-                    <button className="button-register"  to='/sign-up'>Register</button>
+                    <button className="button-register"  to='/sign-up'>Inscription</button>
                 </Link>
           </div>
       </div>
