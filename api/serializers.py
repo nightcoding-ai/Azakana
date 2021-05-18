@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
+from .models import Team
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,3 +14,9 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         Token.objects.create(user=user)
         return user
+
+
+class TeamSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Team
+        fields = '__all__'

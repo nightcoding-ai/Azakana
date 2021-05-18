@@ -17,4 +17,6 @@ urlpatterns = [
     path('masteries/<str:server>/<str:summonerId>', views.masteries),
     path('history/<str:fullserver>/<str:summonerPuuid>', views.history),
     path('details/<str:server>/<str:idGame>', views.historyDetails),
+    path('Team/', views.equipe, name='team'),
+    path('profils/', views.profils, name='profils'),
 ]

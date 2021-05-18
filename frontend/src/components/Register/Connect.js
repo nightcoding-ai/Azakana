@@ -12,7 +12,7 @@ class Connect extends Component {
     return (
     <div id="connect" className="connect">
         <Link to='/sign-in'>
-                    <button className="button-disconnect"  to='/sign-in' onClick={this.disconnect}>Disconnect</button>
+                    <button className="button-disconnect"  to='/sign-in' onClick={this.disconnect}>Se déconnecter</button>
         </Link>
     </div>
     );
