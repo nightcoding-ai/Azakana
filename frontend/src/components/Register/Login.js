@@ -24,7 +24,8 @@ class Login extends Component {
             document.location.href="/connected";
         }
         else{
-           console.log('error');
+           let error = document.getElementById('error');
+           error.innerHTML="<p style='color:white'>Pseudo/mot de passe incorrect</p>";
         }
       }
     )
@@ -41,22 +42,22 @@ class Login extends Component {
       <div>
            <div id="login" className="login">
               <label className="label-form">
-                  Username
+                  Pseudo
                   <input type="text" name="username" className="input-form"
                    value={this.state.credentials.username}
                    onChange={this.inputChanged} />
                 </label>
                 <br/>
                 <label className="label-form">
-                  Password
-                  <input type="password" name="password" className="input-form"
+                  Mot de passe
+                  <input type="password" name="password" className="input-form" id="mdp"
                    value={this.state.credentials.password}
                    onChange={this.inputChanged} />
                 </label>
-                <br/>
-                <button id='button-form' className="button-form" onClick={this.login} >Login</button>
+                <label id='error' className='label-form'></label>
+                <button id='button-form' className="button-form" onClick={this.login} >Connexion</button>
                 <Link to='/sign-up'>
-                    <button className="button-register"  to='/sign-up'>Register</button>
+                    <button className="button-register"  to='/sign-up'>Inscription</button>
                 </Link>
           </div>
       </div>
