@@ -34,6 +34,11 @@ def masteries(request, server, summonerId):
     data = r.json()
     return JsonResponse(data, safe=False)
 
+def champions(request):
+    url = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json'
+    r = requests.get(url, headers={'Content-Type': 'application/json'})
+    data = r.json()
+    return JsonResponse(data, safe=False)
 
 def history(request, fullserver, summonerPuuid):
     url = 'https://' + fullserver + \
