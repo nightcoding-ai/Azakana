@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import "./Register.css";
+import { Link } from 'react-router-dom';
 
 class Register extends Component {
   state = {
@@ -52,7 +53,9 @@ class Register extends Component {
            onChange={this.inputChanged} />
         </label>
         <br/>
-        <button className="button-form" onClick={this.register}>Register</button>
+        <Link to='/sign-in'>
+        <button className="button-form" onClick={this.register} to='/sign-in'>Register</button>
+        </Link>
     </div>
   );
   }
