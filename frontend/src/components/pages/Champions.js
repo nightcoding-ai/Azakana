@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import Footer from '../Footer/Footer';
-import Champ from '../Champion/Champion'
+import Champ from '../Champion/Champion';
 
 class Champions extends React.Component {
   

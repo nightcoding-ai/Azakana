@@ -6,9 +6,8 @@ import './Champion.css';
 class Champ extends React.Component {
   state = {
     count: 0,
-    champions:[],
+    champions: [],
   };
-
   champs = () => {
     fetch('http://127.0.0.1:8000/api/Champions/', {
         method: 'GET',
@@ -24,11 +23,13 @@ class Champ extends React.Component {
     )
     .catch( error => console.error(error))
   }
+
   render(){
     if(this.state.count == 0){
       this.champs();
       this.setState({count: 1});
     }
+   
     return (
       <div>
         {this.state.champions.map((champ) => (
