@@ -1,10 +1,5 @@
-from rest_framework import serializers, viewsets
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
-from django.contrib.auth.models import Group, User
-from django.core import serializers
-from .serializers import UserSerializer
-from django.http import JsonResponse, HttpResponse
+from django.contrib.auth.models import Group
+from django.http import JsonResponse
 import requests
 from .models import Team, Profile
 
@@ -90,8 +85,3 @@ def equipe(request):
 def profils(request):
     data = list(Profile.objects.values())
     return JsonResponse(data, safe=False)
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer

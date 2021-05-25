@@ -10,7 +10,7 @@ class Login extends Component {
   }
 
   login = event => {
-    fetch('http://127.0.0.1:8000/auth/', {
+    fetch('http://127.0.0.1:8000/api/rest-auth/login/', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(this.state.credentials)
@@ -18,10 +18,9 @@ class Login extends Component {
     .then( data => data.json())
     .then(
       data => {
-        console.log(data.token);
-        let tok ="token";
+        let tok ="key";
         if(data[tok]){
-            Cookies.set("Token",data.token, { expires: 1 });
+            Cookies.set("Token",data.key, { expires: 1 });
             Cookies.set("Pseudo",this.state.credentials.username, { expires: 1 });
             document.location.href="/connected";
         }
@@ -39,7 +38,6 @@ class Login extends Component {
     this.setState({credentials: cred});
   }
   connect = () => {
-    console.log("cc");
     if (typeof(this.state.token) != 'undefined') {
       document.location.href="/";
     }

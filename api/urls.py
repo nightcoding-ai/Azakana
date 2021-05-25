@@ -1,17 +1,15 @@
+from allauth.account.views import confirm_email
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import include
-from rest_framework import routers
-from .views import UserViewSet
-from rest_framework.authtoken.views import obtain_auth_token
+from django.urls import path, include
 from . import views
-import requests
-
-router = routers.DefaultRouter()
-router.register('users', UserViewSet)
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('', TemplateView.as_view(template_name='index.html')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^account/', include('allauth.urls')),
     path('profile/<str:server>/<str:pseudo>', views.profile),
     path('ranks/<str:server>/<str:summonerId>', views.ranks),
     path('masteries/<str:server>/<str:summonerId>', views.masteries),
