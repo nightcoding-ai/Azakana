@@ -9,13 +9,16 @@
 }
 
 .register {
+  width:600px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width:100%;
-  height: 100%;
-  margin-bottom: 50px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:150px;
+  margin-top:150px;
 }
 
 .connect{
@@ -29,12 +32,18 @@
 
 .input-form {
     width: 500px;
-    height: 50px;
-    font-size: 40px;
+    height: 35px;
+    font-size: 30px;
+    margin-left:auto;
 }
 
-p{
+h3{
     font-size: 2rem;
+    color:white;
+
+}
+h2{
+    font-size: 1.5rem;
     color:white;
 
 }
@@ -44,7 +53,8 @@ p{
 }
 
 .label-form {
-  font-size:60%;
+  font-size:50px;
+  margin-bottom:20px;
 }
 
 .button-form {
@@ -54,6 +64,19 @@ p{
   border: 1px solid;
   transition: all 0.3s ease-out;
   font-size: 25px;
+  margin-top:25px;
+}
+
+.button-save {
+    background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left: 300px;
+  margin-top: 25px;
+  margin-top: 25px;
 }
 
 .button-register {
@@ -80,7 +103,8 @@ p{
 
 .button-form:hover,
 .button-register:hover,
-.button-disconnect:hover{
+.button-disconnect:hover,
+.button-save:hover {
   transition: all 0.3s ease-out;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   transition: 250ms;

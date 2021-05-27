@@ -31,6 +31,7 @@ class Navbar extends React.Component{
 
   deleteToken = () =>{
     Cookies.remove('Token');
+    Cookies.remove('Pseudo');
     document.location.href="/";
   }
 

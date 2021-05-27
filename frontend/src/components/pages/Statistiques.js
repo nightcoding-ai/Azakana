@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import Footer from '../Footer/Footer';
+import Offline from '../Offline/Offline';
 import Cookies from 'js-cookie';
 
 class Statistiques extends React.Component {
@@ -12,7 +13,9 @@ class Statistiques extends React.Component {
   render(){
     return (
       <>
-        <div className='statistiques'>Statistiques</div>
+        <div className='statistiques'>
+        <Offline/>
+        </div>
         <Footer/>
       </>
     )

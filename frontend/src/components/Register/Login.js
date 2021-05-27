@@ -19,14 +19,15 @@ class Login extends Component {
     .then(
       data => {
         let tok ="key";
+        let pseudo = (this.state.credentials.username).toString();
         if(data[tok]){
             Cookies.set("Token",data.key, { expires: 1 });
-            Cookies.set("Pseudo",this.state.credentials.username, { expires: 1 });
+            Cookies.set("Pseudo",pseudo, { expires: 1 });
             document.location.href="/connected";
         }
         else{
            let error = document.getElementById('error');
-           error.innerHTML="<p id='incorrect'>Pseudo/mot de passe incorrect</p>";
+           error.innerHTML="<h3 id='incorrect'>Pseudo/mot de passe incorrect</h3>";
         }
       }
     )
@@ -45,10 +46,9 @@ class Login extends Component {
 
   render(){
     return (
-      <div>
            <div id="login" className="login">
               <label className="label-form">
-                  Pseudo
+                  Nom d'utilisateur
                   <input type="text" name="username" className="input-form"
                    value={this.state.credentials.username}
                    onChange={this.inputChanged} />
@@ -66,7 +66,6 @@ class Login extends Component {
                     <button className="button-register"  to='/sign-up'>Inscription</button>
                 </Link>
           </div>
-      </div>
     );
   }
 }

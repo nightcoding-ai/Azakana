@@ -19,7 +19,7 @@ class Register extends Component {
 
   register = event => {
     if(this.state.credentials.password1 =='' || this.state.credentials.password2 =='' || this.state.credentials.username ==''|| this.state.credentials.email ==''){
-      this.setState({alert: <p id='alert'>Veuillez remplir tout les champs</p>})
+      this.setState({alert: <p id='alert'>Veuillez remplir tous les champs</p>})
     }else{
       if(this.state.credentials.password1 == this.state.credentials.password2){
         if(this.state.credentials.password1.length > 8){
@@ -44,37 +44,36 @@ class Register extends Component {
   render(){
   return (
     <div className="register">
+      <h2>Mettez le même pseudo en jeu de votre compte League Of Legends pour une expérience utilisateur incroyable ! </h2>
       <label className="label-form">
-          Username League of Legend
+          Nom d'utilisateur
           <input type="text" name="username" className="input-form"
            value={this.state.credentials.user_name}
            onChange={this.inputChanged} />
         </label>
-        <br/>
         <label className="label-form">
-          Password
+          Mot de passe
           <input type="password" name="password1" className="input-form"
            value={this.state.credentials.password1}
            onChange={this.inputChanged} />
         </label>
-        <br/>
         <label className="label-form">
-          Confirm Password
+          Confirmation mot de passe
           <input type="password" name="password2" className="input-form"
            value={this.state.password2}
            onChange={this.inputChanged} />
         </label>
-        <br/>
         <label className="label-form">
-          Mail
+          Adresse email
           <input type="mail" name="email" className="input-form"
            value={this.state.credentials.email}
            onChange={this.inputChanged} />
         </label>
-        <br/>
-        <button className="button-form" onClick={this.register} to='/sign-in'>Register</button>
         {this.state.alert}
+        <button className="button-save" onClick={this.register} to='/sign-in'>Enregistrer</button>
+
     </div>
+
   );
   }
 }
