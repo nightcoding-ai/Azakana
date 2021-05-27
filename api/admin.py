@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import CustomUser
 from django.contrib.auth.admin import UserAdmin
 from django.forms import TextInput, Textarea
-from .models import Profile, Team
+from .models import Teams
+
 
 class UserAdminConfig(UserAdmin):
     model = CustomUser
@@ -23,5 +24,4 @@ class UserAdminConfig(UserAdmin):
 
 
 admin.site.register(CustomUser, UserAdminConfig)
-admin.site.register(Profile)
-admin.site.register(Team)
+admin.site.register(Teams)

@@ -1,9 +1,10 @@
 from django.contrib.auth.models import Group
 from django.http import JsonResponse
+from django.http.response import HttpResponse
 import requests
-from .models import Team, Profile
+from .models import Teams, CustomUser
 
-API_DEV = 'api_key=RGAPI-8bf22d2a-24b4-493a-bd12-8534bb7ac05d'
+API_DEV = 'api_key=RGAPI-7359a042-7d85-4b67-bbf2-ce8acc14de4f'
 
 
 def profile(request, server, pseudo):
@@ -39,11 +40,13 @@ def history(request, fullserver, summonerPuuid):
     data = r.json()
     return JsonResponse(data, safe=False)
 
+
 def champions(request):
     url = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json'
     r = requests.get(url, headers={'Content-Type': 'application/json'})
     data = r.json()
     return JsonResponse(data, safe=False)
+
 
 def historyDetails(request, server, idGame):
     url = 'https://' + server + \
@@ -53,7 +56,8 @@ def historyDetails(request, server, idGame):
     return JsonResponse(data)
 
 
-def equipe(request):
+def equipes(request):
+    '''
     data_temp = list(Team.objects.values('name', 'players'))
     data = []
     noms = []
@@ -78,10 +82,11 @@ def equipe(request):
                     dict['players'] = list()
                     dict['players'].append(i['players'])
                     data.append(dict)
-
+    '''
+    data = list(Teams.objects.values())
     return JsonResponse(data, safe=False)
 
 
-def profils(request):
-    data = list(Profile.objects.values())
+def utilisateurs(request):
+    data = list(CustomUser.objects.values('username', 'team'))
     return JsonResponse(data, safe=False)
