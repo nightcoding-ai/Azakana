@@ -11,7 +11,7 @@ class Statistiques extends React.Component {
     return (
       <>
         <div className='statistiques'>
-        <Stat/>
+          <Stat/>
         </div>
         <Footer/>
       </>
