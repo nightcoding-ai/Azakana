@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../App.css';
-import './Stat.css';
+import './Mid.css';
 import Cookies from 'js-cookie';
 import Offline from '../Offline/Offline';
 
-class Stat extends React.Component {
+class Mid extends React.Component {
 
    state = {
         token: Cookies.get('Token'),
@@ -15,7 +15,7 @@ class Stat extends React.Component {
     
     render_token = () => {
         if (typeof(this.state.token) != 'undefined') {
-            this.setState({str:<p>Co</p>})
+            this.setState({str:<h3>Vous êtes connecté.</h3>})
           }else{
             this.setState({str:<Offline/>})
           }
@@ -35,4 +35,4 @@ class Stat extends React.Component {
   }
 }
 
-export default Stat;
+export default Mid;

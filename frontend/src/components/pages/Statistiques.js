@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import Footer from '../Footer/Footer';
 import Cookies from 'js-cookie';
-import Stat from '../Stats/Stat';
+import Mid from '../Body_statistiques/Mid';
 
 class Statistiques extends React.Component {
   
@@ -11,7 +11,7 @@ class Statistiques extends React.Component {
     return (
       <>
         <div className='statistiques'>
-          <Stat/>
+          <Mid/>
         </div>
         <Footer/>
       </>
