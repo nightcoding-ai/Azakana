@@ -16,7 +16,8 @@ class Teams(models.Model):
 class CustomUser(AbstractUser):
     username = models.CharField(max_length=150, unique=True)
     email = models.EmailField(_('email address'), unique=True)
-    team = models.ForeignKey(Teams, default=None, on_delete=CASCADE, blank=True)
+    team = models.ForeignKey(
+        Teams, default=None, on_delete=CASCADE, blank=True, null=True)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
 
