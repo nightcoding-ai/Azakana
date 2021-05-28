@@ -73,6 +73,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment : fixed;
+  overflow-y: auto;
 }
 
 .e-sport {
@@ -80,6 +82,21 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment : fixed;
+  overflow-y: auto;
+}
+
+.mid-team {
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  width:600px;
 }
 
 .btn-patch {
@@ -91,7 +108,20 @@
   font-size: 25px;
 }
 
-.btn--patch:hover {
+.btn-team {
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+
+.btn-patch:hover,
+.btn-team:hover {
   transition: all 0.3s ease-out;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   transition: 250ms;

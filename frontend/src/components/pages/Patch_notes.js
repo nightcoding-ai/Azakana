@@ -6,7 +6,7 @@ class Patch_notes extends React.Component {
     return (
       <>
         <div className='patch-notes'>
-          <button onClick={() => window.open("https://euw.leagueoflegends.com/fr-fr/news/tags/patch-notes")} className="btn-patch btn--patch">
+          <button onClick={() => window.open("https://euw.leagueoflegends.com/fr-fr/news/tags/patch-notes")} className="btn-patch">
             Accéder aux notes de patch
           </button>
         </div>

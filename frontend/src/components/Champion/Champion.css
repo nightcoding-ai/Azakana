@@ -1,4 +1,55 @@
-p{
-    font-size: 50px;
-    color:black;
+p {
+  font-size: 40px;
+  color:white;
 }
+
+.champs {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 20px 20px 20px 20px;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid;
+  align-items:center;
+  width:700px;
+  margin-bottom:200px;
+  margin-top:200px;
+}
+
+.stats-champs{
+  width:60px;
+  text-align:left;
+  items-items:right;
+}
+.champs-name {
+  background-color: transparent;
+  color: #fff;
+  padding: 5px 5px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 20px;
+  margin:5px;
+}
+
+.button-return {
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+  float:right;
+}
+
+.button-return:hover,
+ .champs-name:hover {
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  transition: 250ms;
+}
+

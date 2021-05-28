@@ -51,7 +51,7 @@ class Team extends React.Component {
   }
 
   createTeam(){
-    let create_html = '<label className="label-form">Choisissez un nom d\'équipe:<input type="text" name="team_name" /></label><button className="button-save">Enregistrer</button>'
+    let create_html = '<div className="mid-team"><label className="label-form">Choisissez un nom d\'équipe <input type="text" name="team_name" /></label><button className="btn-team">Enregistrer</button></div>'
     document.getElementById('team').innerHTML = create_html;
   }
 
@@ -68,7 +68,7 @@ class Team extends React.Component {
               Bienvenue {this.state.pseudo} !<br></br> 
               Membre de: {this.state.team}
               <br></br>
-              <button className='btn-patch' onClick={this.handleClick}>Afficher les membres</button>
+              <button className='btn-team' onClick={this.handleClick}>Afficher les membres</button>
               <br></br>
             </div>
             <Footer/>
@@ -82,9 +82,9 @@ class Team extends React.Component {
                 Bienvenue dans la création d'équipe,<br></br>  
                 {this.state.pseudo} ! Vous n'appartenez pas encore à une équipe.
                 <br></br>
-                <button className='btn-patch' onClick={this.createTeam}>Créer une équipe</button>
+                <button className='btn-team' onClick={this.createTeam}>Créer une équipe</button>
                 <br></br>
-                <button className='btn-patch' onClick={this.joinTeam}>Rejoindre une équipe</button>
+                <button className='btn-team' onClick={this.joinTeam}>Rejoindre une équipe</button>
               </h3>
             </div>
             <Footer/>
