@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import './Champion.css';
+import { Link } from 'react-router-dom';
+
 
 class Champ extends React.Component {
   state = {
@@ -24,6 +25,10 @@ class Champ extends React.Component {
     .catch( error => console.error(error))
   }
 
+  handleClick = () => {
+    window.location.reload(false);
+    }
+
   champSelect = champ => {
     fetch('http://127.0.0.1:8000/api/Champions/', {
         method: 'GET',
@@ -38,6 +43,7 @@ class Champ extends React.Component {
             console.log(data.data[property])
             this.setState({element:
               <div>
+                <Link to='/champions'><button onClick={this.handleClick}>Retour</button></Link>
                 <p>Champion: {data.data[property].id}</p>
                 <p>Titre: {data.data[property].title}</p>
                 <p>Type: {data.data[property].partype}</p>
@@ -64,11 +70,13 @@ class Champ extends React.Component {
     }
    
     return (
+      <>
       <div>
         {this.state.champions.map((champ) => (
             <button onClick={this.champSelect.bind(this, champ[0])}>{champ[0]}</button>
           ))}{this.state.element}
       </div>
+      </>
     )
   }
 }
