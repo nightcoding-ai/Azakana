@@ -10,6 +10,7 @@ class Champ extends React.Component {
     element:'',
   };
   champs = () => {
+    
     fetch('http://127.0.0.1:8000/api/Champions/', {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
@@ -17,9 +18,12 @@ class Champ extends React.Component {
     .then( data => data.json())
     .then(
       data => {
+        let array = [];
         for(const property in data.data){
-          this.state.champions.push([property,data.data[property]]);
+          array.push([property,data.data[property]]);
+          
         }
+        this.setState({champions: array});
       }
     )
     .catch( error => console.error(error))
@@ -43,7 +47,7 @@ class Champ extends React.Component {
             console.log(data.data[property])
             this.setState({element:
               <div>
-                <Link to='/champions'><button onClick={this.handleClick}>Retour</button></Link>
+                <button onClick={this.handleClick}>Retour</button>
                 <p>Champion: {data.data[property].id}</p>
                 <p>Titre: {data.data[property].title}</p>
                 <p>Type: {data.data[property].partype}</p>
@@ -71,7 +75,7 @@ class Champ extends React.Component {
    
     return (
       <>
-      <div>
+      <div >
         {this.state.champions.map((champ) => (
             <button onClick={this.champSelect.bind(this, champ[0])}>{champ[0]}</button>
           ))}{this.state.element}
