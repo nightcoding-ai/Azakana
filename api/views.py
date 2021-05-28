@@ -56,37 +56,34 @@ def historyDetails(request, server, idGame):
     return JsonResponse(data)
 
 
-def equipes(request):
-    '''
-    data_temp = list(Team.objects.values('name', 'players'))
-    data = []
-    noms = []
-    for i in data_temp:
-        dict = {}
-        # print(data)
-        if not data:
-            dict['name'] = i['name']
-            noms.append(i['name'])
-            dict['players'] = list()
-            dict['players'].append(i['players'])
-            data.append(dict)
+def equipes(request, index=0):
+    if index != 0:
+        data = list(Teams.objects.filter(id=index).values('name'))
+        if len(data) > 0:
+            team = data[0]
+            return JsonResponse(team, safe=False)
         else:
-            for j in data:
-                #print(i, j)
-                if (i['name'] == j['name'] and i['players'] not in j['players']):
-                    j['players'].append(i['players'])
-
-                elif i['name'] not in noms:
-                    dict['name'] = i['name']
-                    noms.append(i['name'])
-                    dict['players'] = list()
-                    dict['players'].append(i['players'])
-                    data.append(dict)
-    '''
-    data = list(Teams.objects.values())
-    return JsonResponse(data, safe=False)
+            error = {
+                "error": 'wrong request, this number is not in our index.'
+            }
+            return JsonResponse(error)
+    elif index == 0:
+        data = list(Teams.objects.values())
+        return JsonResponse(data, safe=False)
 
 
-def utilisateurs(request):
-    data = list(CustomUser.objects.values('username', 'team'))
-    return JsonResponse(data, safe=False)
+def utilisateurs(request, user='default'):
+    if user != 'default':
+        alldata = list(CustomUser.objects.values('username', 'team'))
+        for i in alldata:
+            if i['username'] == user:
+                utilisateur = i
+                return JsonResponse(utilisateur, safe=False)
+        else:
+            error = {
+                "error": 'wrong request, the username introduced does not exist.'
+            }
+            return JsonResponse(error)
+    elif user == 'default':
+        data = list(CustomUser.objects.values('username', 'team'))
+        return JsonResponse(data, safe=False)

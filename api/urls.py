@@ -17,5 +17,7 @@ urlpatterns = [
     path('details/<str:server>/<str:idGame>', views.historyDetails),
     path('Champions/', views.champions, name='champions'),
     path('teams/', views.equipes, name='teams'),
+    path('teams/<int:index>/', views.equipes, name='team'),
     path('users/', views.utilisateurs, name='users'),
+    path('users/<str:user>/', views.utilisateurs, name='user'),
 ]
