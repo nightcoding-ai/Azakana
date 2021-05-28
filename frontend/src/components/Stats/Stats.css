@@ -1,8 +1,3 @@
-.stats-container {
-    margin-bottom:200px;
-    display:block;
-}
-
 .Stats_perso {
   padding: auto;
   margin-top: 50px;
@@ -11,6 +6,24 @@
   justify-content: center;
   font-size: 3rem;
   color: #fff;
+}
+
+.stats_server{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
+  text-align: center;
+}
+
+.serv {
+  background-color: #d2691e;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  padding: 20px 40px;
+  border: 1px solid #fff;
+  outline: none;
+  font-size: 25px;
 }
 
 .games {
@@ -44,22 +57,6 @@
   transition: all 0.3s ease-out;
 }
 
-.button_stats {
-    background-color: transparent;
-  color: #fff;
-  padding: 21px 40px;
-  border: 1px solid;
-  transition: all 0.3s ease-out;
-  font-size: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top:50px;
-}
-.button_save:hover{
-  transition: all 0.3s ease-out;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-  transition: 250ms;
-}
 .inex {
   margin-left: auto;
   margin-right: auto;
@@ -72,11 +69,22 @@
   text-align:center;
 }
 
-.stats_server{
-    flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 200px;
-  align-items:center;
-  text-align: center;
+.button_stats {
+  background-color: transparent;
+  color: #fff;
+  padding: 21px 40px;
+  border: 1px solid;
+  transition: all 0.3s ease-out;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
 }
+
+.button_stats:hover{
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  transition: 250ms;
+}
+
+

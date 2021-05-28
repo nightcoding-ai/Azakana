@@ -9,9 +9,8 @@ let data = Object;
 class Stats extends Component {
 
   Click() {
-    let server_selected = 'euw1';
+    let server_selected = document.getElementById('serv').value;
     let summoner = Cookies.get('Pseudo');
-    console.log()
     let section = document.getElementById('Stats_perso');
     let summonerId = String;
     let summonerPuuid = String;
@@ -105,10 +104,20 @@ class Stats extends Component {
 
     render(){
         return(
-           <div className='stats-container'>
+           <div>
                 <div className='stats_server'>
                     <h3> Vous êtes bien connecté, choissisez votre serveur pour afficher vos statistiques.</h3>
-                    <button className='button_stats' onClick={this.Click}>Click</button>
+                    <select id='serv' className="serv">
+                        <option value="euw1">EUW</option>
+                        <option value="na1">NA</option>
+                        <option value="euna1">EUNA</option>
+                        <option value="tr1">TR</option>
+                        <option value="jp1">JP</option>
+                        <option value="oc1">OC</option>
+                        <option value="kr">KR</option>
+                        <option value="ru">RU</option>
+                    </select>
+                    <button className='button_stats' onClick={this.Click}>Rechercher</button>
                 </div>
                 <div className='Stats_perso' id='Stats_perso'></div>
            </div>
