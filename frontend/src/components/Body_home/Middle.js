@@ -10,7 +10,9 @@ class Middle extends React.Component{
 
   handleClick(){
     let server_selected = document.getElementById('servers').value;
+    console.log(server_selected)
     let summoner = document.getElementById('summoner').value;
+    console.log(summoner)
     let section = document.getElementById('profile');
     let summonerId = String;
     let summonerPuuid = String;
@@ -25,7 +27,7 @@ class Middle extends React.Component{
         data = res.data;
         summonerId = data.id;
         summonerPuuid = data.puuid;
-        console.log(data, summonerId);
+            console.log(data, summonerId);
         section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
         //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
@@ -33,7 +35,7 @@ class Middle extends React.Component{
         })
       .then(res => {
         data = res.data;
-        //console.log(data);
+
         const stats = document.getElementById('stats');
         for (let i = 0; i < data.length; i++) {
           if(data[i].queueType === "RANKED_SOLO_5x5"){

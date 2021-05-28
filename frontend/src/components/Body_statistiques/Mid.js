@@ -3,6 +3,7 @@ import '../../App.css';
 import './Mid.css';
 import Cookies from 'js-cookie';
 import Offline from '../Offline/Offline';
+import Stats from '../Stats/Stats';
 
 class Mid extends React.Component {
 
@@ -15,7 +16,7 @@ class Mid extends React.Component {
     
     render_token = () => {
         if (typeof(this.state.token) != 'undefined') {
-            this.setState({str:<h3>Vous êtes connecté.</h3>})
+            this.setState({str:<Stats/>})
           }else{
             this.setState({str:<Offline/>})
           }
@@ -28,7 +29,7 @@ class Mid extends React.Component {
           }
           
     return (
-            <div>
+            <div className='cont'>
                 {this.state.str}
             </div>
     )

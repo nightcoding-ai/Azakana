@@ -10,7 +10,7 @@ class Statistiques extends React.Component {
   render(){
     return (
       <>
-        <div className='statistiques'>
+        <div className='statistiques' id='statistiques'>
           <Mid/>
         </div>
         <Footer/>
