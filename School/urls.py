@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include,re_path
+from django.urls import path, include, re_path
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -15,4 +15,6 @@ urlpatterns = [
     re_path(r'^sign-in', TemplateView.as_view(template_name='index.html')),
     re_path(r'^sign-up', TemplateView.as_view(template_name='index.html')),
     re_path(r'^connected', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^Add_team', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^Join_team', TemplateView.as_view(template_name='index.html')),
 ]

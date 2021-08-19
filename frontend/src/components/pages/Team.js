@@ -4,8 +4,8 @@ import Footer from '../Footer/Footer';
 import Cookies from 'js-cookie';
 import Offline from '../Offline/Offline'
 import axios from 'axios';
-import Not_connected from '../Team/Not_connected';
-import Connected from '../Team/Connected';
+import Not_member from '../Team/Not_member';
+import Member from '../Team/Member';
 
 const BASE_URL = 'http://127.0.0.1:8000/api/'//51.210.4.115:8000
 const api_user = BASE_URL+'users/'
@@ -36,7 +36,7 @@ class Team extends React.Component {
         })
     })
   }
-
+/*
   handleClick() {
     axios.get(api_user)
     .then(res =>{
@@ -51,7 +51,7 @@ class Team extends React.Component {
       document.getElementById('team').innerHTML += membres[j] + "<br>";
     }
   }
-
+*/
   
 
   render(){
@@ -59,31 +59,16 @@ class Team extends React.Component {
       if (this.state.team !== "") {
         return(
           <>
-            <Connected/>
+            <Member team={this.state.team}/>
             <Footer/>
           </>
         )
       }else if (this.state.team === "") {
         return(
           <>
-            <Not_connected/>
+            <Not_member/>
             <Footer/>
           </>
-          /*
-          <>
-            <div className="team" id="team">
-              <h3>
-                Bienvenue dans la création d'équipe,<br></br>  
-                {this.state.pseudo} ! Vous n'appartenez pas encore à une équipe.
-                <br></br>
-                <button className='btn-team' onClick={this.createTeam}>Créer une équipe</button>
-                <br></br>
-                <button className='btn-team' onClick={this.joinTeam}>Rejoindre une équipe</button>
-              </h3>
-            </div>
-            <Footer/>
-          </>
-          */
         )
       }
     }else{
