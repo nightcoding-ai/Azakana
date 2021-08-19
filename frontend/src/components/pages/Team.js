@@ -4,6 +4,8 @@ import Footer from '../Footer/Footer';
 import Cookies from 'js-cookie';
 import Offline from '../Offline/Offline'
 import axios from 'axios';
+import Not_connected from '../Team/Not_connected';
+import Connected from '../Team/Connected';
 
 const BASE_URL = 'http://127.0.0.1:8000/api/'//51.210.4.115:8000
 const api_user = BASE_URL+'users/'
@@ -56,7 +58,7 @@ class Team extends React.Component {
   }
 
   joinTeam(){
-
+    
   }
 
   render(){
@@ -64,18 +66,17 @@ class Team extends React.Component {
       if (this.state.team !== "") {
         return(
           <>
-            <div className="team" id="team">
-              Bienvenue {this.state.pseudo} !<br></br> 
-              Membre de: {this.state.team}
-              <br></br>
-              <button className='btn-team' onClick={this.handleClick}>Afficher les membres</button>
-              <br></br>
-            </div>
+            <Connected/>
             <Footer/>
           </>
         )
       }else if (this.state.team === "") {
         return(
+          <>
+            <Not_connected/>
+            <Footer/>
+          </>
+          /*
           <>
             <div className="team" id="team">
               <h3>
@@ -89,6 +90,7 @@ class Team extends React.Component {
             </div>
             <Footer/>
           </>
+          */
         )
       }
     }else{

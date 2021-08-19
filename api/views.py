@@ -4,7 +4,7 @@ from django.http.response import HttpResponse
 import requests
 from .models import Teams, CustomUser
 
-API_DEV = 'api_key=RGAPI-fb670c3f-16c6-477a-8a38-58ca3602ab5b'
+API_DEV = 'api_key=RGAPI-6d65a016-9895-4397-8b9a-8266f7d06bc8'
 
 
 def profile(request, server, pseudo):
