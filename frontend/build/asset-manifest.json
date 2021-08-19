@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.431cdb95.chunk.css",
-    "main.js": "/static/js/main.b6b9fc1c.chunk.js",
-    "main.js.map": "/static/js/main.b6b9fc1c.chunk.js.map",
+    "main.js": "/static/js/main.a7bd2872.chunk.js",
+    "main.js.map": "/static/js/main.a7bd2872.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d7b60d89.js",
     "runtime-main.js.map": "/static/js/runtime-main.d7b60d89.js.map",
-    "static/js/2.40a00384.chunk.js": "/static/js/2.40a00384.chunk.js",
-    "static/js/2.40a00384.chunk.js.map": "/static/js/2.40a00384.chunk.js.map",
+    "static/js/2.ab04a24e.chunk.js": "/static/js/2.ab04a24e.chunk.js",
+    "static/js/2.ab04a24e.chunk.js.map": "/static/js/2.ab04a24e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.02e7d8bd52bec0567f1eef63750df529.js": "/precache-manifest.02e7d8bd52bec0567f1eef63750df529.js",
+    "precache-manifest.a1f64f6dab649a2d8ec1bc34dd231ee9.js": "/precache-manifest.a1f64f6dab649a2d8ec1bc34dd231ee9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.431cdb95.chunk.css.map": "/static/css/main.431cdb95.chunk.css.map",
-    "static/js/2.40a00384.chunk.js.LICENSE.txt": "/static/js/2.40a00384.chunk.js.LICENSE.txt",
+    "static/js/2.ab04a24e.chunk.js.LICENSE.txt": "/static/js/2.ab04a24e.chunk.js.LICENSE.txt",
     "static/media/God King Garen Login Screen - League of Legends.mp4": "/static/media/God King Garen Login Screen - League of Legends.d40d52bc.mp4",
     "static/media/icon.png": "/static/media/icon.3fe78924.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d7b60d89.js",
-    "static/js/2.40a00384.chunk.js",
+    "static/js/2.ab04a24e.chunk.js",
     "static/css/main.431cdb95.chunk.css",
-    "static/js/main.b6b9fc1c.chunk.js"
+    "static/js/main.a7bd2872.chunk.js"
   ]
 }

@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
+import '../../App.css';
 
-function Connected() {
-    return (
-        <div className='team'>
-            Etat connecté
-        </div>
-    )
+export default class Connected extends Component {
+    render() {
+        return (
+            <div className='team'>
+                Etat connecté
+            </div>
+        )
+    }
 }
-
-export default Connected
