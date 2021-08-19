@@ -52,14 +52,7 @@ class Team extends React.Component {
     }
   }
 
-  createTeam(){
-    let create_html = '<div className="mid-team"><label className="label-form">Choisissez un nom d\'équipe <input type="text" name="team_name" /></label><button className="btn-team">Enregistrer</button></div>'
-    document.getElementById('team').innerHTML = create_html;
-  }
-
-  joinTeam(){
-    
-  }
+  
 
   render(){
     if (this.state.token) {

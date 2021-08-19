@@ -5,7 +5,7 @@ export default class Not_connected extends Component {
     render() {
         return (
             <div className='team'>
-                Etat non connecté
+                Vous devez être inscrit et connecté pour pouvoir avoir accès à l'onglet équipe
             </div>
         )
     }

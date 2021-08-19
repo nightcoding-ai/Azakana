@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import './Middle.css';
-import video from '../../tempfiles/God King Garen Login Screen - League of Legends.mp4'
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
@@ -111,7 +110,9 @@ class Middle extends React.Component{
   render(){
     return (
       <div className='mid-container'>
-        <video src={video} autoPlay loop muted/>
+        <video autoPlay loop muted>
+          <source src="https://v1.casimages.com/v/2021/08/19//q5GqMb-God-King-Garen-Login-Screen-League-of-Legends.mp4"></source>
+        </video>
         <div className="search" id="search">
             <select id='servers' className="servers">
                 <option value="euw1">EUW</option>
