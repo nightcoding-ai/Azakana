@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.db.models.base import Model
 from django.utils.translation import ugettext_lazy as _
 from django.db.models.deletion import CASCADE
 from .managers import CustomUserManager
@@ -25,3 +26,18 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Members(models.Model):
+    team = models.ForeignKey(Teams, on_delete=CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=CASCADE, unique=True)
+
+
+
+
+
+    
+
+
+
+ 

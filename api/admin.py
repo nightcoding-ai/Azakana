@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser
+from .models import CustomUser, Members
 from django.contrib.auth.admin import UserAdmin
 from django.forms import TextInput, Textarea
 from .models import Teams
@@ -25,3 +25,5 @@ class UserAdminConfig(UserAdmin):
 
 admin.site.register(CustomUser, UserAdminConfig)
 admin.site.register(Teams)
+admin.site.register(Members)
+

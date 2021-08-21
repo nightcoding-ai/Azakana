@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CustomUser, Teams
+from .models import CustomUser, Members, Roles, TeamMembers, Teams
 
 
 class TeamsSerializer(serializers.ModelSerializer):
@@ -11,3 +11,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = '__all__'
+
+
+class MembersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Members
+        fields = ('username', 'alias')

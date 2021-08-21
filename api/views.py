@@ -2,7 +2,7 @@ from django.contrib.auth.models import Group
 from django.http import JsonResponse
 from django.http.response import HttpResponse
 import requests
-from .models import Teams, CustomUser
+from .models import Members, Teams, CustomUser
 
 API_DEV = 'api_key=RGAPI-6d65a016-9895-4397-8b9a-8266f7d06bc8'
 
@@ -87,3 +87,5 @@ def utilisateurs(request, user='default'):
     elif user == 'default':
         data = list(CustomUser.objects.values('username', 'team'))
         return JsonResponse(data, safe=False)
+
+

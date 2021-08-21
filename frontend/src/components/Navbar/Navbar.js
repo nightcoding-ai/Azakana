@@ -3,7 +3,7 @@ import { Button } from '../Button/Button';
 import { ButtonD } from '../Button/ButtonD';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import logo from '../../tempfiles/icon.png';
+
 import Cookies from 'js-cookie';
 
 class Navbar extends React.Component{
@@ -49,7 +49,7 @@ class Navbar extends React.Component{
     <>
       <nav className='navbar' onLoad={this.render_token}>
         <div className='navbar-container'>
-        <img alt="" src={logo} className="logo" />
+        <img alt="" src="https://nsm09.casimages.com/img/2021/08/19//mini_21081904150226065417533217.png" className="logo" />
            <Link to='/' className='navbar-title' onClick={this.closeMobileMenu}>
             Azakana
            </Link>

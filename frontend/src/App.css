@@ -13,7 +13,8 @@
 .e-sport,
 .sign-up,
 .sign-in,
-.connected {
+.connected,
+.login {
   display: flex;
   min-height: 90vh;
   align-items: center;
@@ -84,6 +85,7 @@
   overflow-y: auto;
 }
 
+
 .mid-team {
   background-color: transparent;
   color: #fff;
@@ -124,3 +126,5 @@
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   transition: 250ms;
 }
+
+

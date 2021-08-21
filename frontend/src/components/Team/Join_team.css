@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+  }
+  
+.team {
+    background-image: url("https://nsm09.casimages.com/img/2021/08/19//21081901343426065417533036.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
