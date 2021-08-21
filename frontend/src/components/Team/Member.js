@@ -5,7 +5,7 @@ export default class Member extends Component {
     render() {
         return (
             <div className='team'>
-                Membre de l'équipe  {this.props.team}
+                Membre de : {this.props.team}
             </div>
         )
     }

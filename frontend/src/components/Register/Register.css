@@ -9,7 +9,7 @@
 }
 
 .register {
-  width:600px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,44 +17,42 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom:150px;
-  margin-top:150px;
+  margin-bottom: 150px;
+  margin-top: 150px;
 }
 
-.connect{
+.connect {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 200px;
-  align-items:center;
+  align-items: center;
   text-align: center;
 }
 
 .input-form {
-    width: 500px;
-    height: 35px;
-    font-size: 30px;
-    margin-left:auto;
+  width: 500px;
+  height: 35px;
+  font-size: 30px;
+  margin-left: auto;
 }
 
-h3{
-    font-size: 2rem;
-    color:white;
-
+h3 {
+  font-size: 2rem;
+  color: white;
 }
-h2{
-    font-size: 1.5rem;
-    color:white;
-
+h2 {
+  font-size: 1.5rem;
+  color: white;
 }
 
-#incorrect{
-    margin-top: 25px;
+#incorrect {
+  margin-top: 25px;
 }
 
 .label-form {
-  font-size:50px;
-  margin-bottom:20px;
+  font-size: 50px;
+  margin-bottom: 20px;
 }
 
 .button-form {
@@ -64,17 +62,16 @@ h2{
   border: 1px solid;
   transition: all 0.3s ease-out;
   font-size: 25px;
-  margin-top:25px;
+  margin-top: 25px;
 }
 
 .button-save {
-    background-color: transparent;
+  background-color: transparent;
   color: #fff;
   padding: 21px 40px;
   border: 1px solid;
   transition: all 0.3s ease-out;
   font-size: 25px;
-  margin-left: 300px;
   margin-top: 25px;
   margin-top: 25px;
 }
@@ -86,11 +83,10 @@ h2{
   border: 1px solid;
   transition: all 0.3s ease-out;
   font-size: 25px;
-  margin-left: 107px;
   margin-top: 50px;
 }
 
-.button-disconnect{
+.button-disconnect {
   background-color: transparent;
   color: #fff;
   padding: 21px 40px;
@@ -99,7 +95,7 @@ h2{
   font-size: 25px;
   margin-left: auto;
   margin-right: auto;
-  margin-top:50px;
+  margin-top: 50px;
 }
 
 .button-form:hover,
@@ -111,7 +107,7 @@ h2{
   transition: 250ms;
 }
 
-#alert{
+#alert {
   font-size: 25px;
   color: red;
 }

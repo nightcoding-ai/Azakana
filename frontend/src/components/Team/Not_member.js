@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Add_team from './Add_team';
 import '../../App.css';
 
 export default class Not_member extends Component {

@@ -1,74 +1,30 @@
 import "../Register/Register.css";
+import "./Add_team.css";
 import React, { Component } from 'react';
-import "./Join_team.css";
+import { Link } from 'react-router-dom';
+import Footer from "../Footer/Footer";
 
 export default class Join_team extends Component {
-    componentDidMount() {
-        const apiTeams = 'http://127.0.0.1:8000/api/teams/';
-        const apiUsers = 'http://127.0.0.1:8000/api/users/';
 
-
-        fetch(apiUsers)
-          .then((response) => response.json())
-          .then((data) => {
-            let Teams = [];
-            let equipe = [];
-            let compteur = 1;
-            let affichage = document.getElementById("team");
-
-            for(let k = 0; k < data.length; k ++){
-                for(let i = 0; i < data.length; i ++){
-                    if(data[i].team !== null){
-                        if(data[i].team === compteur){
-                            equipe.push(data[i].username);
-                        
-                            }
-                    
-                        }
-            
-                    }
-                
-                compteur ++;
-                Teams.push(equipe);
-                if(compteur !== compteur - 1){
-                    equipe = [];
-                }
-                
-            }
-            
-            
-            for(let i = 0; i < Teams.length; i ++){
-               let row = "<tr>";
-               let td = "<td>";
-                
-                if(Teams[i].length > 0 && Teams[i].length < 5){
-            
-                    for(let j = 0; j <Teams[i].length; j++){
-                        affichage.innerHTML += row + '<p>' +  Teams[i][j] + '</p><br>';
-                       
-                    }
-                    affichage.innerHTML += "</tr>";
-            
-                }
-            }
-                  
-
-              }
-          );
-      }
-      render() {
+    render() {
         return (
-            <div>
-                <h1>Les équipes</h1>
-                <div className="team">
-                    <div id="team">
-
+            <>
+                <div className='team'>
+                    <div className='login'>
+                        <label className='label-form'>
+                            Nom de l'équipe
+                            <input type="text" name="team_name" className="input-form"></input>
+                        </label>
+                        <button className='btn-team' onClick={this.createTeam}>Créer une équipe</button>
                     </div>
-                    
+                    <div>
+                        <Link to='Add_team' className="btn-toggle">
+                            <button className='btn-team' to='/Add_team'>Créer sa propre équipe</button>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-        
-        );
-      }
+                <Footer/>
+            </>
+        )
+    }
 }
-

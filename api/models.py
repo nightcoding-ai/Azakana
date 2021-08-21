@@ -30,14 +30,7 @@ class CustomUser(AbstractUser):
 
 class Members(models.Model):
     team = models.ForeignKey(Teams, on_delete=CASCADE)
-    user = models.ForeignKey(CustomUser, on_delete=CASCADE, unique=True)
+    user = models.ManyToManyField(CustomUser)
 
-
-
-
-
-    
-
-
-
- 
+    def __str__(self):
+        return str(self.team)
