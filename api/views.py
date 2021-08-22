@@ -2,7 +2,9 @@ from django.contrib.auth.models import Group
 from django.http import JsonResponse
 from django.http.response import HttpResponse
 import requests
-from .models import Members, Teams, CustomUser
+from .models import Member, Teams, CustomUser
+from django.db.models import Count
+from django.middleware import csrf
 
 API_DEV = 'api_key=RGAPI-6d65a016-9895-4397-8b9a-8266f7d06bc8'
 
@@ -74,7 +76,7 @@ def equipes(request, index=0):
 
 def utilisateurs(request, user='default'):
     if user != 'default':
-        alldata = list(CustomUser.objects.values('username', 'team'))
+        alldata = list(CustomUser.objects.values())
         for i in alldata:
             if i['username'] == user:
                 utilisateur = i
@@ -85,7 +87,39 @@ def utilisateurs(request, user='default'):
             }
             return JsonResponse(error)
     elif user == 'default':
-        data = list(CustomUser.objects.values('username', 'team'))
+        data = list(CustomUser.objects.values('id', 'username', 'email'))
         return JsonResponse(data, safe=False)
 
 
+def members(request):
+    data = list(Member.objects.values())
+    return JsonResponse(data, safe=False)
+
+
+def createTeam(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        Teams.objects.create(
+            name=name,
+        )
+    return JsonResponse({"status": 'Success'})
+
+
+def joinTeam(request):
+    if request.method == 'POST':
+        team = request.POST.get('team')
+        user = request.POST.get('user')
+        Member.objects.create(
+            team=team,
+            user=user
+        )
+    return JsonResponse({"status": 'Success'})
+
+
+def get_or_create_csrf_token(request):
+    token = request.META.get('CSRF_COOKIE', None)
+    if token is None:
+        token = csrf._get_new_csrf_key()
+        request.META['CSRF_COOKIE'] = token
+    request.META['CSRF_COOKIE_USED'] = True
+    return HttpResponse(token)

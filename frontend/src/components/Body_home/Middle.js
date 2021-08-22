@@ -2,8 +2,6 @@ import React from 'react';
 import '../../App.css';
 import './Middle.css';
 import axios from 'axios';
-import Cookies from 'js-cookie';
-
 let data = Object;
 class Middle extends React.Component{
 
