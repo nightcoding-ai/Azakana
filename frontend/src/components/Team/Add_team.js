@@ -6,25 +6,33 @@ import Footer from "../Footer/Footer";
 import axios from 'axios';
 import Cookies from 'js-cookie';
 let csrf_token = "";
+let pseudo = Cookies.get('Pseudo');
+let user_id = 0;
 export default class Add_team extends Component {
-    state = {
-        pseudo: Cookies.get('Pseudo'),
-        token: Cookies.get('Token'),
-      }
 
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/api/csrf_token/")
         .then(res =>{
             csrf_token = res.data;
-            console.log(res);
+        })
+        axios.get("http://127.0.0.1:8000/api/users/"+pseudo)
+        .then(res => {
+            let data = res.data;
+            user_id = data.id;
         })
     }
+
     createTeam() {
         let data = new FormData();
         data.append("name", document.getElementById('team_name').value);
+        data.append("user_id", user_id);
         data.append("csrfmiddlewaretoken", csrf_token);
         axios.post("http://127.0.0.1:8000/api/create_team/", data)
-        .then(res => console.log('text sent'))
+        .then(res => {
+            if(res.data){
+                window.location ='/team';
+            }
+        })
         .catch(errors => console.log(errors))
     }
     render() {

@@ -21,6 +21,7 @@ urlpatterns = [
     path('users/', utilisateurs, name='users'),
     path('users/<str:user>/', utilisateurs, name='user'),
     path('members/', members, name='members'),
+    path('members/<int:user_id>', members, name='members'),
     path('create_team/', createTeam, name='creating'),
     path('join_team/', joinTeam, name='joining'),
     path('csrf_token/', get_or_create_csrf_token, name='csrf'),

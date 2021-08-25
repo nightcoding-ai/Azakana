@@ -3,7 +3,6 @@ from django.http import JsonResponse
 from django.http.response import HttpResponse
 import requests
 from .models import Member, Teams, CustomUser
-from django.db.models import Count
 from django.middleware import csrf
 
 API_DEV = 'api_key=RGAPI-6d65a016-9895-4397-8b9a-8266f7d06bc8'
@@ -91,16 +90,30 @@ def utilisateurs(request, user='default'):
         return JsonResponse(data, safe=False)
 
 
-def members(request):
-    data = list(Member.objects.values())
-    return JsonResponse(data, safe=False)
+def members(request, user_id=0):
+    if user_id == 0:
+        data = list(Member.objects.values())
+        return JsonResponse(data, safe=False)
+    else:
+        user = Member.objects.get(user=user_id)
+        equipe = user.team_id
+        test = Teams.objects.get(id=equipe)
+        return HttpResponse(test)
 
 
 def createTeam(request):
     if request.method == 'POST':
         name = request.POST.get('name')
+        user_id = request.POST.get('user_id')
         Teams.objects.create(
             name=name,
+        )
+        latest_name = Teams.objects.get(name=name)
+        latest_id = latest_name.id
+        print(latest_id)
+        Member.objects.create(
+            team_id=latest_id,
+            user_id=user_id,
         )
     return JsonResponse({"status": 'Success'})
 

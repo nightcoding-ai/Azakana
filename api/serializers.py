@@ -7,6 +7,7 @@ class TeamsSerializer(serializers.ModelSerializer):
         model = Teams
         fields = '__all__'
 
+
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
@@ -16,4 +17,4 @@ class CustomUserSerializer(serializers.ModelSerializer):
 class MembersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Members
-        fields = ('username', 'alias')
+        fields = '__all__'

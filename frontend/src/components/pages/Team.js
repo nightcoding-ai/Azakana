@@ -7,13 +7,9 @@ import axios from 'axios';
 import Not_member from '../Team/Not_member';
 import Member from '../Team/Member';
 
-const BASE_URL = 'http://127.0.0.1:8000/api/'//51.210.4.115:8000
-const api_user = BASE_URL+'users/'
-const api_team = BASE_URL+'teams/'
-
-let team_name = String;
-let team_id = Number;
-let membres = [];
+const BASE_URL = 'http://127.0.0.1:8000/api/';//51.210.4.115:8000
+const api_user = BASE_URL+'users/';
+const api_members = BASE_URL+'members/';
 class Team extends React.Component {
 
   state = {
@@ -23,36 +19,20 @@ class Team extends React.Component {
   }
 
   componentDidMount() {
+    let user_id = 0;
     axios.get(api_user+this.state.pseudo)
     .then(res => {
-      team_id = res.data.team;
-      if (team_id != null)
-        axios.get(api_team+team_id.toString())
-        .then(res =>{
-          team_name = res.data.name;
-          this.setState({
-            team: team_name
-          });
-        })
-    })
-  }
-/*
-  handleClick() {
-    axios.get(api_user)
-    .then(res =>{
       let data = res.data;
-      for(let i=0; i<data.length;i++){
-        if(data[i].team == team_id){
-          membres.push(data[i].username);
-        }
-      }
+      user_id = data.id;
+      axios.get(api_members+user_id)
+      .then(res => {
+        let team_name = res.data;
+        this.setState({
+          team: team_name
+        })
+      })
     })
-    for(let j=0;j<membres.length;j++){
-      document.getElementById('team').innerHTML += membres[j] + "<br>";
-    }
   }
-*/
-  
 
   render(){
     if (this.state.token) {
