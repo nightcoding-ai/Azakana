@@ -103,12 +103,12 @@ def members(request, user_id=0):
 
 def createTeam(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
+        teamname = request.POST.get('name')
         user_id = request.POST.get('user_id')
         Teams.objects.create(
-            name=name,
+            name=teamname,
         )
-        latest_name = Teams.objects.get(name=name)
+        latest_name = Teams.objects.get(name=teamname)
         latest_id = latest_name.id
         Member.objects.create(
             team_id=latest_id,
