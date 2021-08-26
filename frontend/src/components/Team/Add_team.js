@@ -1,4 +1,4 @@
-import "../Register/Register.css";
+
 import "./Add_team.css";
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import Cookies from 'js-cookie';
 let csrf_token = "";
 let pseudo = Cookies.get('Pseudo');
 let user_id = 0;
+
 export default class Add_team extends Component {
 
     componentDidMount() {
@@ -46,10 +47,11 @@ export default class Add_team extends Component {
                         </label>
                         <span id='error'></span>
                         <button className='btn-team' onClick={this.createTeam}>Créer une équipe</button>
-                    </div>
+                    
                     <Link to='Join_team' className='btn-toggle'>
                         <button className='btn-team' to='/Join_team'>Rejoindre une équipe existante</button>
                     </Link>
+                    </div>
                 </div>
                 <Footer/>
             </>

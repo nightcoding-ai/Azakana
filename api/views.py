@@ -129,6 +129,18 @@ def addPlayer(request):
         )
     return JsonResponse({"status": 'Success'})
 
+def remPlayer(request):
+    if request.method == 'POST':
+        team_name = request.POST.get('team_name')
+        user_id = request.POST.get('user_id')
+        get_team = Teams.objects.get(name =team_name)
+        team_id = get_team.id
+        Member.objects.delete(
+            team_id=team_id,
+            user_id=user_id
+        )
+    return JsonResponse({"status": 'Success'})
+
 
 def joinTeam(request):
     if request.method == 'POST':

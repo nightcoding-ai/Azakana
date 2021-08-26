@@ -14,7 +14,7 @@
 .sign-up,
 .sign-in,
 .connected,
-.login {
+.login{
   display: flex;
   min-height: 90vh;
   align-items: center;
@@ -84,6 +84,7 @@
   background-attachment: fixed;
   overflow-y: auto;
 }
+
 
 
 .mid-team {

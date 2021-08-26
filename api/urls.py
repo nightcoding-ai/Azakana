@@ -24,6 +24,7 @@ urlpatterns = [
     path('members/<int:user_id>', members, name='members'),
     path('create_team/', createTeam, name='creating'),
     path('add_player/', addPlayer, name='add'),
+    path('rem_player/', remPlayer, name='remove'),
     path('join_team/', joinTeam, name='joining'),
     path('csrf_token/', get_or_create_csrf_token, name='csrf'),
 ]

@@ -103,3 +103,5 @@ class ChrisTestClass(TestCase):
         idGame = '5237756513'
         res = self.client.get('/api/ranks/'+server+'/'+idGame)
         self.assertEqual(res.status_code, 200)
+
+    

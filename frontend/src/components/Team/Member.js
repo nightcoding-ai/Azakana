@@ -28,15 +28,15 @@ export default class Member extends Component {
             axios.post("http://127.0.0.1:8000/api/add_player/", data)
             .then(response => {
                 if(response.data){
-                    console.log("Joueur ajouté");
+                    document.getElementById('message').innerHTML += "Joueur ajouté";
                 }
             })
             .catch(errors => console.log(errors))
         })
     }
 
-    removePlayer(){
-        console.log('bisous');
+    removePlayer(){ // à corriger
+       console.log('Hello');
     }
 
 
@@ -54,6 +54,7 @@ export default class Member extends Component {
                     <input id="input" type="text" name="player"  placeholder="Nom du joueur"></input>
                     <br></br>
                     <button id="addPlayer"  onClick={this.addPlayer}>Ajouter joueur</button>
+
                     <button id="removePlayer" onClick={this.removePlayer}>Retirer joueur</button>
                 <div id="message">
                     

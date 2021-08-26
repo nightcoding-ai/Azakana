@@ -6,8 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('', TemplateView.as_view(template_name='index.html')),
-    re_path(r'^statistiques', TemplateView.as_view(
-        template_name='index.html')),
+    re_path(r'^statistiques', TemplateView.as_view(template_name='index.html')),
     re_path(r'^team', TemplateView.as_view(template_name='index.html')),
     re_path(r'^patch-notes', TemplateView.as_view(template_name='index.html')),
     re_path(r'^champions', TemplateView.as_view(template_name='index.html')),
@@ -17,4 +16,7 @@ urlpatterns = [
     re_path(r'^connected', TemplateView.as_view(template_name='index.html')),
     re_path(r'^Add_team', TemplateView.as_view(template_name='index.html')),
     re_path(r'^Join_team', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^Mentions', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^Contact', TemplateView.as_view(template_name='index.html')),
+
 ]

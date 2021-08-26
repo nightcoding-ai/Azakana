@@ -10,3 +10,25 @@
   float: right;
   margin-top: 5%;
 }
+
+#listEquipes{
+  display: table;
+  margin: 0 auto;
+}
+
+#listeElement{
+  list-style: none;
+}
+
+#buttonJoin{
+  margin-right: 5px;
+  
+  padding: 2px;
+  border: 1px solid rgb(230, 138, 33);
+  
+}
+
+#buttonJoin:hover{
+  background-color: lightgray;
+}
+

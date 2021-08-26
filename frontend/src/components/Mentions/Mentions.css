@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: "PT Sans", sans-serif;
+}
+
+table {
+ 
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 15px;
+    margin-left: 15px;
+
+  }
+  
+ table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  table tr:hover {background-color: #ddd;}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #d2691e;
+    color: white;
+  }
+
+  a#liens{
+      text-decoration: none;
+
+  }
+
+  a#liens:hover{
+      color: #d2691e;
+  }
+
+div#corporation{
+    margin-top: 15px;
+    margin-left: 15px;
+    width: 75%;
+}
+
+div#intel{
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 75%;
+}
+
+div#technologies{
+    margin-top: 50px;
+    margin-left: 15px;
+    width: 75%;
+}
