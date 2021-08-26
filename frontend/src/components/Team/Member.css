@@ -1,0 +1,80 @@
+.team {
+  background-image: url("https://nsm09.casimages.com/img/2021/08/19//21081901343426065417533036.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn-team {
+  text-align: center;
+  margin-top: -1%;
+  margin-bottom: 2%;
+}
+
+.message {
+  color: red;
+}
+
+#input {
+  background-image: url("https://nsm09.casimages.com/img/2021/08/25//mini_21082507474426065417541174.png");
+  border: 2px solid #693611;
+  border-radius: 4px;
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  background-size: 10px 10px;
+  width: 300px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+#input:focus {
+  border: 2px solid #9c4f18;
+}
+
+#span {
+  color: lightgray;
+}
+
+.content {
+  width: 420px;
+  background-color: #d2691e;
+}
+
+#addPlayer,
+#removePlayer {
+  margin-left: 10px;
+  margin-right: 4px;
+  padding: 2px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+#teamname {
+  margin: 10px;
+}
+
+#addPlayer {
+  background-color: rgb(96, 224, 79);
+  color: #fff;
+}
+
+#addPlayer:hover {
+  background-color: rgb(59, 139, 49);
+  color: #fff;
+}
+
+#removePlayer {
+  background-color: rgb(236, 70, 70);
+  color: #fff;
+}
+
+#removePlayer:hover {
+  background-color: rgb(143, 44, 44);
+  color: #fff;
+}
+#message {
+  font-size: small;
+  color: rgb(36, 32, 32);
+  margin-right: 10px;
+}

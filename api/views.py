@@ -110,9 +110,21 @@ def createTeam(request):
         )
         latest_name = Teams.objects.get(name=name)
         latest_id = latest_name.id
-        print(latest_id)
         Member.objects.create(
             team_id=latest_id,
+            user_id=user_id,
+        )
+    return JsonResponse({"status": 'Success'})
+
+
+def addPlayer(request):
+    if request.method == 'POST':
+        team_name = request.POST.get('team_name')
+        user_id = request.POST.get('user_id')
+        get_team = Teams.objects.get(name=team_name)
+        team_id = get_team.id
+        Member.objects.create(
+            team_id=team_id,
             user_id=user_id,
         )
     return JsonResponse({"status": 'Success'})
