@@ -3,5 +3,27 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
 }
-  
+
+button.button-on{
+    text-align: center;
+    margin-left: 40%;
+   
+}
+
+#formulaire{
+    background-color: #d2691e;
+    border: 2px solid #fff;
+    font-family: "PT Sans", sans-serif;
+    text-align: center;
+    
+}
+
+input{
+    padding : 0;
+    margin-left : 5px;
+    margin-right: 5px;
+
+}
+

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from '../Footer/Footer';
 
 
 import './Mentions.css';
@@ -9,7 +10,7 @@ class Mentions extends React.Component{
     render(){
 
         return(
-            
+            <>
             <body id="body">
                 
                     <div id="developpers">
@@ -49,10 +50,10 @@ class Mentions extends React.Component{
                    
                 
             </body>
-            
+            <Footer />
             
            
-
+            </>
         )
     }
 

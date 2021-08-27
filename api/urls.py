@@ -27,4 +27,5 @@ urlpatterns = [
     path('rem_player/', remPlayer, name='remove'),
     path('join_team/', joinTeam, name='joining'),
     path('csrf_token/', get_or_create_csrf_token, name='csrf'),
+    path('contact/', contactUs, name='contact'),
 ]

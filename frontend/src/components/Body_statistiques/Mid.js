@@ -4,6 +4,7 @@ import './Mid.css';
 import Cookies from 'js-cookie';
 import Offline from '../Offline/Offline';
 import Stats from '../Stats/Stats';
+import Footer from '../Footer/Footer';
 
 class Mid extends React.Component {
 
@@ -29,9 +30,12 @@ class Mid extends React.Component {
           }
           
     return (
+          <>
             <div className='cont'>
                 {this.state.str}
             </div>
+           
+          </>
     )
   }
 }

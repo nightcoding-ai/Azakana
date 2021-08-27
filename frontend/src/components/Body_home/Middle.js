@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import './Middle.css';
 import axios from 'axios';
+import Footer from '../Footer/Footer';
 let data = Object;
 class Middle extends React.Component{
 
@@ -107,6 +108,7 @@ class Middle extends React.Component{
 
   render(){
     return (
+      <>
       <div className='mid-container'>
         <video autoPlay loop muted>
           <source src="https://v1.casimages.com/v/2021/08/19//q5GqMb-God-King-Garen-Login-Screen-League-of-Legends.mp4"></source>
@@ -135,6 +137,8 @@ class Middle extends React.Component{
         </div>
         <div id='profile' className='profile'></div>
       </div>
+      <Footer/>
+    </>
     );
   }
 }

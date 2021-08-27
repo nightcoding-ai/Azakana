@@ -39,7 +39,7 @@ class Register extends Component {
         this.setState({alert: <p id='alert'>Veuillez confirmer le mot de passe</p>})
       }
     }
-  }
+    }
 
   render(){
   return (

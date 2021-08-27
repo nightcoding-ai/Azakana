@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import CustomUser, Members, Roles, TeamMembers, Teams
+from .models import Contact, CustomUser, Members, Roles, TeamMembers, Teams
 
 
 class TeamsSerializer(serializers.ModelSerializer):
@@ -18,3 +18,8 @@ class MembersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Members
         fields = '__all__'
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = "__all__"

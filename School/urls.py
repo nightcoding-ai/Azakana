@@ -16,7 +16,7 @@ urlpatterns = [
     re_path(r'^connected', TemplateView.as_view(template_name='index.html')),
     re_path(r'^Add_team', TemplateView.as_view(template_name='index.html')),
     re_path(r'^Join_team', TemplateView.as_view(template_name='index.html')),
-    re_path(r'^Mentions', TemplateView.as_view(template_name='index.html')),
-    re_path(r'^Contact', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^mentions', TemplateView.as_view(template_name='index.html')),
+    re_path(r'^contact', TemplateView.as_view(template_name='index.html')),
 
 ]

@@ -2,7 +2,7 @@ from django.contrib.auth.models import Group
 from django.http import JsonResponse
 from django.http.response import HttpResponse
 import requests
-from .models import Member, Teams, CustomUser
+from .models import Contact, Member, Teams, CustomUser
 from django.middleware import csrf
 
 API_DEV = 'api_key=RGAPI-6d65a016-9895-4397-8b9a-8266f7d06bc8'
@@ -160,3 +160,17 @@ def get_or_create_csrf_token(request):
         request.META['CSRF_COOKIE'] = token
     request.META['CSRF_COOKIE_USED'] = True
     return HttpResponse(token)
+
+def contactUs(request):
+    if request.method == 'POST':
+        name  = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        Contact.objects.create(
+            name = name,
+            email = email,
+            subject = subject,
+        )
+    data = list(Contact.objects.values('name', 'email', 'subject'))
+    print(data)
+    return JsonResponse(data, safe=False)

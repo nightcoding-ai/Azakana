@@ -7,12 +7,12 @@ function Footer() {
     <div className='footer-container'>
             <div id="contentFooter">
               <div id="legalMentions">
-                <Link to='/Mentions'>
+                <Link to='/mentions'>
                  mentions légales
                </Link>
               </div>
               <div id="contact">
-                <Link to='/Contact'>
+                <Link to='/contact'>
                  nous contacter
                 </Link>
               </div>

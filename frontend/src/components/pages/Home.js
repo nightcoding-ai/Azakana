@@ -6,7 +6,10 @@ class Home extends React.Component{
   render(){
     return (
       <>
+        <div>
         <Middle />
+        </div>
+        <Footer />
       </>
     );
   }

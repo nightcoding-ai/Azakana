@@ -35,8 +35,8 @@ class App extends React.Component{
           <Route path='/connected' component={Connected} />
           <Route path='/Add_team' component={Add_team} />
           <Route path='/Join_team' component={Join_team} />
-          <Route path='/Mentions' component={Mentions} />
-          <Route path='/Contact' component={Contact} />
+          <Route path='/mentions' component={Mentions} />
+          <Route path='/contact' component={Contact} />
         </Switch>
       </Router>
     </>

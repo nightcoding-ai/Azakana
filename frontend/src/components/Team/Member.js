@@ -47,7 +47,7 @@ export default class Member extends Component {
             <div className='team'>
                 <div className='content'>
                 <div id="teamname">
-                    Equipe <span id="span">{this.props.team}</span>
+                    Equipe <span id="spanNomEquipe">{this.props.team}</span>
                 </div>
                 
                 <div id="teamChangerContent">
