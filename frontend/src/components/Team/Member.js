@@ -25,7 +25,7 @@ export default class Member extends Component {
             data.append("user_id", user_id);
             data.append("team_name", document.getElementById('span').innerText);
             data.append("csrfmiddlewaretoken", csrf_token);
-            axios.post(BASE_URL+"/add_player/", data)
+            axios.post(BASE_URL+"add_player/", data)
             .then(response => {
                 if(response.data){
                     document.getElementById('message').innerHTML += "Joueur ajouté";
