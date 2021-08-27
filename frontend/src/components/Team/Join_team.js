@@ -8,7 +8,7 @@ import { checkPropTypes } from "prop-types";
 
 let teams_name = [];
 let pseudo = Cookies.get('Pseudo');
-const BASE_URL = 'http://127.0.0.1:8000/api/';//51.210.4.115:8000
+const BASE_URL = 'http://azakana.fr/api/';//51.210.4.115:8000
 const api_user = BASE_URL+'users/';
 let user_id = 0;
 let csrf_token = "";
@@ -16,11 +16,11 @@ let csrf_token = "";
 export default class Join_team extends Component {
 
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/csrf_token/")
+        axios.get(BASE_URL+"/csrf_token/")
         .then(res =>{
             csrf_token = res.data;
         })
-        axios.get("http://127.0.0.1:8000/api/teams/")
+        axios.get(BASE_URL+"/teams/")
         .then(response =>{
             let data = response.data;
     
@@ -31,7 +31,7 @@ export default class Join_team extends Component {
             
       
         })
-        axios.get("http://127.0.0.1:8000/api/users/"+pseudo)
+        axios.get(BASE_URL+"/users/"+pseudo)
         .then(res => {
             let data = res.data;
             user_id = data.id;
@@ -41,7 +41,7 @@ export default class Join_team extends Component {
     }
 
     joinTeam(){
-        console.logt('in develop')
+        console.log('in development');
 
     }
 

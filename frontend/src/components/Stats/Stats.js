@@ -17,7 +17,7 @@ class Stats extends Component {
     let history = [];
     let idGames = [];
     let infoGame = "";
-    const api_Django = 'http://127.0.0.1:8000/api/'//51.210.4.115
+    const api_Django = 'http://azakana.fr/api/'
 
     axios.get(api_Django+'profile/'+server_selected+'/'+summoner)
       .then(res => {

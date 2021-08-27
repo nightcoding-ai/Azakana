@@ -58,6 +58,9 @@
   transition: all 0.2s ease-out;
 }
 
+.active {
+  border-bottom: 4px solid #fff;
+}
 
 .nav-links-mobile {
   display: none;
@@ -65,14 +68,12 @@
 
 .menu-icon {
   display: none;
-
 }
 
-.logo{
-    margin-right:25px;
-    width:85px;
-    height:70px;
-
+.logo {
+  margin-right: 25px;
+  width: 85px;
+  height: 70px;
 }
 
 @media screen and (max-width: 960px) {
@@ -115,13 +116,13 @@
 
   .navbar-title {
     position: absolute;
-    font-size:90%;
+    font-size: 90%;
     left: 0;
-    margin-right:300px;
+    margin-right: 300px;
   }
-  .logo{
-    display:none;
-    }
+  .logo {
+    display: none;
+  }
 
   .menu-icon {
     display: block;
@@ -169,4 +170,3 @@
   text-decoration: none;
   height: 25%;
 }
-

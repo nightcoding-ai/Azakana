@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Button } from '../Button/Button';
 import { ButtonD } from '../Button/ButtonD';
-import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 import Cookies from 'js-cookie';
@@ -50,64 +50,67 @@ class Navbar extends React.Component{
       <nav className='navbar' onLoad={this.render_token}>
         <div className='navbar-container'>
         <img alt="" src="https://nsm09.casimages.com/img/2021/08/19//mini_21081904150226065417533217.png" className="logo" />
-           <Link to='/' className='navbar-title' onClick={this.closeMobileMenu}>
+           <NavLink to='/' className='navbar-title' style={{ borderBottom: 'none'}} onClick={this.closeMobileMenu}>
             Azakana
-           </Link>
+           </NavLink>
            <div className='menu-icon' onClick={this.handleClick}>
            <i className={this.state.click ? 'fas fa-times' : 'fas fa-bars'} />
            </div>
           <ul className={this.state.click  ? 'nav-menu active' : 'nav-menu'}>
 
             <li className='nav-item'>
-              <Link
+              <NavLink
                 to='/statistiques'
+                activeClassName="active"
                 className='nav-links'
                 onClick={this.closeMobileMenu}
               >
                 Statistiques
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
                 to='/team'
+                activeClassName="active"
                 className='nav-links'
                 onClick={this.closeMobileMenu}
               >
                 Equipe
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
+                activeClassName="active"
                 to='/patch-notes'
                 className='nav-links'
                 onClick={this.closeMobileMenu}
               >
                 Notes de patch
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
+                activeClassName="active"
                 to='/champions'
                 className='nav-links'
                 onClick={this.closeMobileMenu}
               >
                 Champions
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
+                activeClassName="active"
                 to='/e-sport'
                 className='nav-links'
                 onClick={this.closeMobileMenu}
               >
                 E-sport
-              </Link>
+              </NavLink>
             </li>
           </ul>
           
           {this.state.str}
-          
-          
         </div>
       </nav>
     </>

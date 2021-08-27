@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import './Contact.css';
 
-
+const BASE_URL = 'http://azakana.fr/api/;'
 let csrf_token = "";
 
 class Contact extends React.Component{
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/csrf_token/")
+        axios.get(BASE_URL+"csrf_token/")
         .then(res =>{
             csrf_token = res.data;
         })
@@ -35,7 +35,7 @@ class Contact extends React.Component{
         data.append("email", document.getElementById('email').value);
         data.append("subject", document.getElementById('subject').value);
         data.append("csrfmiddlewaretoken", csrf_token);
-        axios.post("http://127.0.0.1:8000/api/contact/", data)
+        axios.post(BASE_URL+"contact/", data)
         .then(res => {
             if(res.data){
                 window.location ='/contact';

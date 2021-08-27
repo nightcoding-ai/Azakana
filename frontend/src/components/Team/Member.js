@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 import './Member.css';
 
 let csrf_token = "";
-const BASE_URL = 'http://127.0.0.1:8000/api/';//51.210.4.115:8000
+const BASE_URL = 'http://azakana.fr/api/';//51.210.4.115:8000
 const api_user = BASE_URL+'users/';
 const api_members = BASE_URL+'members/';
 
 export default class Member extends Component {
     componentDidMount() {
-        axios.get("http://127.0.0.1:8000/api/csrf_token/")
+        axios.get(BASE_URL+"/csrf_token/")
         .then(res =>{
             csrf_token = res.data;
         })
@@ -25,7 +25,7 @@ export default class Member extends Component {
             data.append("user_id", user_id);
             data.append("team_name", document.getElementById('span').innerText);
             data.append("csrfmiddlewaretoken", csrf_token);
-            axios.post("http://127.0.0.1:8000/api/add_player/", data)
+            axios.post(BASE_URL+"/add_player/", data)
             .then(response => {
                 if(response.data){
                     document.getElementById('message').innerHTML += "Joueur ajouté";

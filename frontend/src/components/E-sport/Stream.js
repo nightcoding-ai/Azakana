@@ -3,15 +3,14 @@ import '../../App.css';
 import './Stream.css';
 
 class Stream extends React.Component {
-//51.210.4.115 Lien vers le site en ligne
     state = {
         streamer: [
-          { url: 'https://player.twitch.tv/?channel=solary&parent=127.0.0.1',nom: "Solary" },
-          { url: 'https://player.twitch.tv/?channel=ogaminglol&parent=127.0.0.1',nom: "Ogaming" },
-          { url: 'https://player.twitch.tv/?channel=gobgg&parent=127.0.0.1',nom: "GoBGG" },
-          { url: 'https://player.twitch.tv/?channel=sixentv&parent=127.0.0.1',nom: "SixenTV" },
+          { url: 'https://player.twitch.tv/?channel=solary&parent=Azakana.fr',nom: "Solary" },
+          { url: 'https://player.twitch.tv/?channel=ogaminglol&parent=Azakana.fr',nom: "Ogaming" },
+          { url: 'https://player.twitch.tv/?channel=gobgg&parent=Azakana.fr',nom: "GoBGG" },
+          { url: 'https://player.twitch.tv/?channel=sixentv&parent=Azakana.fr',nom: "SixenTV" },
         ],
-        encours: "https://player.twitch.tv/?channel=solary&parent=127.0.0.1"
+        encours: "https://player.twitch.tv/?channel=solary&parent=Azakana.fr"
       };
     onAdd = streamer => {
 

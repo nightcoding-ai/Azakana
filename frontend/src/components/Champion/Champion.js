@@ -1,8 +1,7 @@
 import React from 'react';
 import './Champion.css';
-import { Link } from 'react-router-dom';
 
-
+const URL_CHAMP = 'http://azakana.fr/api/Champions';
 class Champ extends React.Component {
   state = {
     count: 0,
@@ -11,7 +10,7 @@ class Champ extends React.Component {
   };
   champs = () => {
     
-    fetch('http://127.0.0.1:8000/api/Champions/', {
+    fetch(URL_CHAMP, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
     })
@@ -34,7 +33,7 @@ class Champ extends React.Component {
     }
 
   champSelect = champ => {
-    fetch('http://127.0.0.1:8000/api/Champions/', {
+    fetch(URL_CHAMP, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
     })

@@ -8,16 +8,14 @@ class Middle extends React.Component{
 
   handleClick(){
     let server_selected = document.getElementById('servers').value;
-    console.log(server_selected)
     let summoner = document.getElementById('summoner').value;
-    console.log(summoner)
     let section = document.getElementById('profile');
     let summonerId = String;
     let summonerPuuid = String;
     let history = [];
     let idGames = []; 
     let infoGame = "";
-    const api_Django = 'http://127.0.0.1:8000/api/'//51.210.4.115
+    const api_Django = 'http://azakana.fr/api/';
 
 
     axios.get(api_Django+'profile/'+server_selected+'/'+summoner)
@@ -28,7 +26,6 @@ class Middle extends React.Component{
             console.log(data, summonerId);
         section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
-        //return axios.get(`https://`+server_selected+RiotMastery+summonerId+API_DEV);
         return axios.get(api_Django+'ranks/'+server_selected+'/'+summonerId);
         })
       .then(res => {
@@ -53,7 +50,6 @@ class Middle extends React.Component{
       })
       .then( res => {
         const stats = document.getElementById('stats');
-        //console.log(res.data);
         stats.innerHTML += "<H3>Top 3 des champions les plus joués :</H3>"
         for (let i = 0; i < 3; i++) {
           stats.innerHTML += "id du champion : " + String(res.data[i].championId) +", points de maitrise : "+ String(res.data[i].championPoints) +"<br>";
@@ -63,7 +59,6 @@ class Middle extends React.Component{
       })
       .then(res => {    //requête pour remplir tableau history avec les id de parties
         history = res.data;
-        //console.log(history);
         for(let k = 0; k < history.length; k ++){
           idGames.push(history[k].slice(5));
         }
@@ -71,7 +66,6 @@ class Middle extends React.Component{
           axios.get(api_Django +'details/'+ server_selected +'/'+ idGames[l])
             .then(res => {
               infoGame = res.data;
-              //console.log(infoGame);
               const stats = document.getElementById('stats');
               stats.innerHTML += "<br>";
               stats.innerHTML += infoGame.gameMode;
@@ -137,7 +131,6 @@ class Middle extends React.Component{
         </div>
         <div id='profile' className='profile'></div>
       </div>
-      <Footer/>
     </>
     );
   }
