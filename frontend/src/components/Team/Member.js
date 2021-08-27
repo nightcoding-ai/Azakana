@@ -9,7 +9,7 @@ const api_members = BASE_URL+'members/';
 
 export default class Member extends Component {
     componentDidMount() {
-        axios.get(BASE_URL+"/csrf_token/")
+        axios.get(BASE_URL+"csrf_token/")
         .then(res =>{
             csrf_token = res.data;
         })
