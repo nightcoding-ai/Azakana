@@ -129,11 +129,12 @@ def addPlayer(request):
         )
     return JsonResponse({"status": 'Success'})
 
+
 def remPlayer(request):
     if request.method == 'POST':
         team_name = request.POST.get('team_name')
         user_id = request.POST.get('user_id')
-        get_team = Teams.objects.get(name =team_name)
+        get_team = Teams.objects.get(name=team_name)
         team_id = get_team.id
         Member.objects.delete(
             team_id=team_id,
@@ -154,22 +155,19 @@ def joinTeam(request):
 
 
 def get_or_create_csrf_token(request):
-    token = request.META.get('CSRF_COOKIE', None)
-    if token is None:
-        token = csrf._get_new_csrf_key()
-        request.META['CSRF_COOKIE'] = token
-    request.META['CSRF_COOKIE_USED'] = True
+    token = csrf.get_token(request)
     return HttpResponse(token)
+
 
 def contactUs(request):
     if request.method == 'POST':
-        name  = request.POST.get('name')
+        name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         Contact.objects.create(
-            name = name,
-            email = email,
-            subject = subject,
+            name=name,
+            email=email,
+            subject=subject,
         )
     data = list(Contact.objects.values('name', 'email', 'subject'))
     print(data)
