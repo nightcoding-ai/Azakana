@@ -1,7 +1,6 @@
 import React, { Component} from "react";
 import "./Register.css";
 import { Link } from 'react-router-dom';
-
 class Register extends Component {
   state = {
     credentials: {username: '', password1: '',password2:'', email: ''},
@@ -28,8 +27,13 @@ class Register extends Component {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(this.state.credentials),
           })
+          .then( res => {
+            if(res.ok){
+              window.location='/sign-in';
+            }
+          })
           .catch( error => {
-            console.error(error)
+            this.setState({alert: <p id='alert'>Ce nom d'utilisateur ou adresse mail existe déjà</p>})
           })
           
         }else{
@@ -44,7 +48,6 @@ class Register extends Component {
   render(){
   return (
     <div className="register">
-      <h2>Mettez le même pseudo en jeu de votre compte League Of Legends pour une expérience utilisateur incroyable ! </h2>
       <label className="label-form">
           Nom d'utilisateur
           <input type="text" name="username" className="input-form"
@@ -71,7 +74,6 @@ class Register extends Component {
         </label>
         {this.state.alert}
         <button className="button-save" onClick={this.register} to='/sign-in'>Enregistrer</button>
-
     </div>
 
   );

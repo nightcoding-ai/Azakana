@@ -23,7 +23,6 @@ class Middle extends React.Component{
         data = res.data;
         summonerId = data.id;
         summonerPuuid = data.puuid;
-            console.log(data, summonerId);
         section.innerHTML = "<div id='Level' class='level'>"+String(data.summonerLevel)+
         "</div><div id='summoner_name' class='summoner_name'>"+String(data.name)+"</div><div id='stats' class='stats'></div>";
         return axios.get(api_Django+'ranks/'+server_selected+'/'+summonerId);

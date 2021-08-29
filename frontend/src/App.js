@@ -25,7 +25,7 @@ class App extends React.Component{
       <CookieConsent
       buttonText='Je comprends'
       buttonStyle={{color:'white', background:'orange'}}
-      location='top'>
+      >
         Nous utilisons des cookies pour améliorer l'expérience utilisateur.
       </CookieConsent>
       <Router>
