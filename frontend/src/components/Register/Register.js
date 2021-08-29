@@ -23,7 +23,7 @@ class Register extends Component {
     }else{
       if(this.state.credentials.password1 == this.state.credentials.password2){
         if(this.state.credentials.password1.length > 8){
-          fetch('http://azakana.fr/api/rest-auth/registration/', {
+          fetch('https://azakana.fr/api/rest-auth/registration/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(this.state.credentials),

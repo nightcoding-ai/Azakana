@@ -8,7 +8,7 @@ import Cookies from 'js-cookie';
 let csrf_token = "";
 let pseudo = Cookies.get('Pseudo');
 let user_id = 0;
-const BASE_URL='http://azakana.fr'
+const BASE_URL='https://azakana.fr'
 export default class Add_team extends Component {
 
     componentDidMount() {

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './Member.css';
 
 let csrf_token = "";
-const BASE_URL = 'http://azakana.fr/api/';//51.210.4.115:8000
+const BASE_URL = 'https://azakana.fr/api/';//51.210.4.115:8000
 const api_user = BASE_URL+'users/';
 const api_members = BASE_URL+'members/';
 

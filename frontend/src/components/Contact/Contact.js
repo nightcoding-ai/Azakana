@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import './Contact.css';
 
-const BASE_URL = 'http://azakana.fr/api/'
+const BASE_URL = 'https://azakana.fr/api/'
 let csrf_token = "";
 
 class Contact extends React.Component{

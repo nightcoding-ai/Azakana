@@ -15,7 +15,7 @@ class Middle extends React.Component{
     let history = [];
     let idGames = []; 
     let infoGame = "";
-    const api_Django = 'http://azakana.fr/api/';
+    const api_Django = 'https://azakana.fr/api/';
 
 
     axios.get(api_Django+'profile/'+server_selected+'/'+summoner)

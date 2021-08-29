@@ -1,7 +1,7 @@
 import React from 'react';
 import './Champion.css';
 
-const URL_CHAMP = 'http://azakana.fr/api/Champions';
+const URL_CHAMP = 'https://azakana.fr/api/Champions';
 class Champ extends React.Component {
   state = {
     count: 0,

@@ -7,7 +7,7 @@ import axios from 'axios';
 import Not_member from '../Team/Not_member';
 import Member from '../Team/Member';
 
-const BASE_URL = 'http://azakana.fr/api/';
+const BASE_URL = 'https://azakana.fr/api/';
 const api_user = BASE_URL+'users/';
 const api_members = BASE_URL+'members/';
 class Team extends React.Component {

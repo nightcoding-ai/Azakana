@@ -8,7 +8,7 @@ import { checkPropTypes } from "prop-types";
 
 let teams_name = [];
 let pseudo = Cookies.get('Pseudo');
-const BASE_URL = 'http://azakana.fr/api/';//51.210.4.115:8000
+const BASE_URL = 'https://azakana.fr/api/';//51.210.4.115:8000
 const api_user = BASE_URL+'users/';
 let user_id = 0;
 let csrf_token = "";
